@@ -1,0 +1,127 @@
+
+/* 
+    Created on : 27-mar-2014, 18.41.27
+    Author     : bananajoe
+*/
+
+.page{
+    /*per il margine del div page nord/est/sud/ovest*/
+
+    margin: auto auto auto auto;
+    width: 900px;
+    height: 747px;
+
+    padding: 2px;
+
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 1px navy solid;
+}
+
+
+h1{
+    color: white;
+    font: sans-serif;
+    font-size: 32px;
+    text-align:center;
+    font-style: italic; 
+}
+
+.header{
+
+    /*se la larghezza della page è preimpostata non serve impostare quella del div header*/
+    padding-bottom: 40px;
+    border-radius: 5px;
+    border: 1px navy solid;
+    background-image: url('img/header.jpg'); 
+    background-repeat: no-repeat;
+    height: 40px;
+    }
+
+
+#sidebar{
+
+    /*padding tra bordo sidebar e contenuto sidebar*/
+    padding: 2px;
+    margin-top: 5px;
+    position: relative;
+    height: 600px;
+    width:  180px;
+    //border: 1px navy solid;
+    //border-radius: 5px;
+    background-color: whitesmoke; 
+}
+
+#content{
+    padding: 2px;
+    margin-top: 5px;
+    position: relative;
+    height: 600px;
+    //border: 1px navy solid;
+    //border-radius: 5px;
+    margin-left: 190px;
+    bottom: 611px;
+    background-color: whitesmoke;
+}
+
+
+#footer{ 
+
+    //background-color: whitesmoke;
+    position: relative;
+    background-image: url('img/header.jpg'); 
+    background-repeat: no-repeat;
+    height: 50px;
+    bottom: 606px;
+    border: 1px navy solid;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.content{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px navy solid;
+    height: 528px;
+    background-color: #d9d9d9;
+}
+
+.linkSideBar{
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px navy solid;
+}
+
+.imgSideBar{
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px navy solid;
+
+}
+
+.barra{
+    padding-left: 250px;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    border: 1px navy solid;
+}
+
+form#BarraRicerca{
+
+    background-color: #d9d9d9;
+    color: #666666; 
+    display: inline-block; 
+    font-size: 10px;  
+    padding: 2px; 
+}
+
+
