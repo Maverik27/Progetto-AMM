@@ -1,0 +1,84 @@
+
+/* 
+    Created on : 27-mar-2014, 18.41.27
+    Author     : bananajoe
+*/
+
+label{
+    display: inline-block;
+    width: 25%;
+}
+
+body{
+    padding: 0;
+    margin:  0;
+}
+
+#page{
+    /*per il margine del div page nord/est/sud/ovest*/
+
+    margin: 3px auto 0px auto;
+    border: 3px black;
+
+    width: 900px;
+    height:700px;
+
+}
+
+h1{
+    color: black;
+    font: sans-serif;
+    font-size: 48px;
+    text-align: center;
+    font-style: italic; 
+}
+
+#header{
+
+    /*se la larghezza della page è preimpostata non serve impostare quella del div header*/
+    padding: 3px;
+    background-image: url('img/ottima.jpg'); 
+    background-repeat: no-repeat;
+}
+
+#sidebar{
+
+    /*padding tra bordo sidebar e contenuto sidebar*/
+    position: relative;
+    height: 600px;
+    width:  175px;
+    //border: 1px navy solid;
+    background-color: whitesmoke; 
+}
+
+#content{
+
+    position: relative;
+    height: 600px;
+    //border: 1px navy solid;
+    margin-left: 180px;
+    bottom: 602px;
+
+}
+
+
+#footer{ 
+
+    background-color:bisque;
+    position: relative;
+    height: 80px;
+    bottom: 600px;
+    //border: 1px navy solid;
+    text-align:center;
+}
+
+form#BarraRicerca{
+
+    color: #666666; 
+    display: inline-block; 
+    font-size: 10px;  
+    padding: 2px; 
+    width: 100%;
+}
+
+
