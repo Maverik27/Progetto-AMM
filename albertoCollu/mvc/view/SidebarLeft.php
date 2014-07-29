@@ -13,12 +13,31 @@ class SidebarLeft {
 
     public function __toString() {
         $html = "<div id=\"sidebar\">";
-        $html.="<a href=\"#\" <img src=\"img/pcTablet.pnj\" width=\"155\" height=\"85\"/> Pc e Tablet </a>\n ";
-        $html.="<a href=\"#\" <img src=\"img/Desktop.pnj\" width=\"155\" height=\"85\"/> Desktop Pc </a>\n ";
-        $html.="<a href=\"#\" <img src=\"img/Accessori.pnj\" width=\"155\" height=\"85\"/> Accessori </a>\n ";
-        $html.="<a href=\"#\" <img src=\"img/Monitor.pnj\" width=\"155\" height=\"85\"/> Monitor </a>\n ";
-        $html.="</div>";
+        $html .= "<div class=\"linkSideBar\">\n";
+        $html .= "<a style=\"text-decoration:none;\" href=\"index.php?page=chisiamo\"><img src=\"css/img/chisiamo.png\" width=\"45\" height=\"20\"></a>";
+        $html .= "<a style=\"text-decoration:none;\" href=\"index.php?page=contattaci\"><img src=\"css/img/contattaci.png\" width=\"45\" height=\"20\"></a>";
+        $html .= "<a style=\"text-decoration:none;\" href=\"index.php?page=login\"><img src=\"css/img/login.png\" width=\"45\" height=\"20\"></a>";
+        $html .= "</div>\n";
+        $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
+        $html .= $this->addDivInSidebar();
+        $html .= "</div>\n";
+        return $html;
+    }
 
+    public function addDivInSidebar() {
+        $html = "<div class=\"imgSideBar\">\n";
+        $html .= "<a style=\"text-decoration:none;\" href=\"#\"><img src=\"css/img/pcPortatili.png\" width=\"80\" height=\"65\"/> Pc e Tablet </a>\n ";
+        $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
+        $html .= "<br/>";
+        $html .= "<a style=\"text-decoration:none;\" href=\"#\"><img src=\"css/img/Desktop.png\" width=\"80\" height=\"60\"/> Pc Desktop </a>\n ";
+        $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
+        $html .= "<br/>";
+        $html .= "<a style=\"text-decoration:none;\" href=\"#\"><img src=\"css/img/Monitor.png\" width=\"80\" height=\"55\"/> Monitor </a>\n ";
+        $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
+        $html .= "<br/>";
+        $html .= "<a style=\"text-decoration:none;\" href=\"#\"><img src=\"css/img/Accessori.png\" width=\"60\" height=\"60\"/> Acessori </a>\n ";
+        $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
+        $html .= "</div>";
         return $html;
     }
 
