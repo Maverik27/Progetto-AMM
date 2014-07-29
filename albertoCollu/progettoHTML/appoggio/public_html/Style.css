@@ -9,7 +9,7 @@
 
     margin: auto auto auto auto;
     width: 900px;
-    height: 747px;
+    height: 827px;
 
     padding: 2px;
 
@@ -35,9 +35,19 @@ h1{
     border: 1px navy solid;
     background-image: url('img/header.jpg'); 
     background-repeat: no-repeat;
-    height: 40px;
-    }
+    height: 50px;
+}
 
+.bar{
+
+    top: 12px;
+    width: 896px;
+    alignment-adjust: central;
+    height: 15px;
+    position: relative;
+    border: 1px navy solid;
+    border-radius: 5px;
+}
 
 #sidebar{
 
@@ -49,35 +59,46 @@ h1{
     width:  180px;
     //border: 1px navy solid;
     //border-radius: 5px;
+    top: 15px;
     background-color: whitesmoke; 
 }
 
 #content{
-    padding: 2px;
+    padding: 4px;
     margin-top: 5px;
     position: relative;
     height: 600px;
     //border: 1px navy solid;
     //border-radius: 5px;
     margin-left: 190px;
-    bottom: 611px;
+    bottom: 596px;
     background-color: whitesmoke;
 }
 
 
 #footer{ 
 
-    //background-color: whitesmoke;
     position: relative;
     background-image: url('img/header.jpg'); 
     background-repeat: no-repeat;
-    height: 50px;
-    bottom: 606px;
+    height: 85px;
+    bottom: 575px;
     border: 1px navy solid;
-    border-radius: 5px;
-    text-align:center;
+    border-radius: 3px;
+    alignment-adjust: central;
+    text-align: center;
 }
 
+.barF{
+
+    width: 896px;
+    alignment-adjust: central;
+    height: 15px;
+    position: relative;
+    bottom: 20px;
+    border: 1px navy solid;
+    border-radius: 5px;
+}
 .content{
     padding: 10px;
     border-radius: 5px;
@@ -109,6 +130,7 @@ h1{
 }
 
 .barra{
+
     padding-left: 250px;
     background-color: #d9d9d9;
     border-radius: 5px;
