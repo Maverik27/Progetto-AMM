@@ -75,7 +75,6 @@ h1{
     background-color: whitesmoke;
 }
 
-
 #footer{ 
 
     position: relative;
@@ -110,12 +109,19 @@ h1{
 .linkSideBar{
     background-color: #d9d9d9;
     border-radius: 5px;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    text-align: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
     border: 1px navy solid;
+}
+.linkSideBar ul{
+    background-image: url('img/contattaci.png'); 
+    background-repeat: no-repeat;
+    list-style-type: none;
+    background-position: 0px -1px;
+    padding-left: 30px;
 }
 
 .imgSideBar{
