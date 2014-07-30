@@ -16,7 +16,6 @@ class Header {
     public function __toString() {
         $html = "<div class=\"header\">\n";
         $html.= "<div class=\"title\">" . $this->headerTitle . "</div>";
-        $html.= "<div class=\"bar\"> <img src=\"css/img/bar.png\"/></div>\n";
         $html .= "</div>";
         return $html;
     }

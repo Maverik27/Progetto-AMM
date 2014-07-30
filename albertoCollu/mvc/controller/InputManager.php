@@ -19,6 +19,10 @@ class InputManager {
         "chisiamo",
         "contattaci",
         "login",
+        "desktop",
+        "accessori",
+        "monitor",
+        "portatili",
     );
 
     public function __construct() {

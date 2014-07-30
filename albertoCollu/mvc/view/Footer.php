@@ -17,8 +17,7 @@ class Footer {
     public function __toString() {
 
         $html = "<div id=\"footer\">";
-        $html.= "<div class=\"barF\"> <img src=\"css/img/barF.png\"/></div>\n";
-        $html .= $this->info;
+        $html.= $this->info;
         $html.="</div>";
         return $html;
     }

@@ -5,19 +5,14 @@
 */
 
 .page{
-    /*per il margine del div page nord/est/sud/ovest*/
-
     margin: auto auto auto auto;
     width: 900px;
-    height: 827px;
-
+    height: 1024px;
     padding: 2px;
-
     background-color: aliceblue;
     border-radius: 5px;
     border: 1px navy solid;
 }
-
 
 h1{
     color: white;
@@ -28,81 +23,53 @@ h1{
 }
 
 .header{
-
-    /*se la larghezza della page è preimpostata non serve impostare quella del div header*/
-    padding-bottom: 40px;
-    border-radius: 5px;
-    border: 1px navy solid;
+    position: relative;
+    bottom: 20px;
+    border-radius: 3px;
     background-image: url('img/header.jpg'); 
     background-repeat: no-repeat;
-    height: 50px;
-}
-
-.bar{
-
-    top: 12px;
-    width: 896px;
-    alignment-adjust: central;
-    height: 15px;
-    position: relative;
-    border: 1px navy solid;
-    border-radius: 5px;
+    height: 100px;
 }
 
 #sidebar{
-
-    /*padding tra bordo sidebar e contenuto sidebar*/
     padding: 2px;
-    margin-top: 5px;
     position: relative;
-    height: 600px;
+    height: 827px;
     width:  180px;
     //border: 1px navy solid;
     //border-radius: 5px;
-    top: 15px;
+    bottom: 16px;
     background-color: whitesmoke; 
 }
 
 #content{
-    padding: 4px;
-    margin-top: 5px;
+    padding-top: 2px;
     position: relative;
-    height: 600px;
+    height: 829px;
     //border: 1px navy solid;
     //border-radius: 5px;
     margin-left: 190px;
-    bottom: 596px;
+    bottom: 847px;
     background-color: whitesmoke;
 }
 
 #footer{ 
-
     position: relative;
     background-image: url('img/header.jpg'); 
     background-repeat: no-repeat;
     height: 85px;
-    bottom: 575px;
-    border: 1px navy solid;
+    bottom: 861px;
+    //border: 1px navy solid;
     border-radius: 3px;
     alignment-adjust: central;
     text-align: center;
 }
 
-.barF{
-
-    width: 896px;
-    alignment-adjust: central;
-    height: 15px;
-    position: relative;
-    bottom: 20px;
-    border: 1px navy solid;
-    border-radius: 5px;
-}
 .content{
     padding: 10px;
     border-radius: 5px;
-    border: 1px navy solid;
-    height: 528px;
+    //border: 1px navy solid;
+    height: 759px;
     background-color: #d9d9d9;
 }
 
@@ -114,14 +81,7 @@ h1{
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px navy solid;
-}
-.linkSideBar ul{
-    background-image: url('img/contattaci.png'); 
-    background-repeat: no-repeat;
-    list-style-type: none;
-    background-position: 0px -1px;
-    padding-left: 30px;
+    //border: 1px navy solid;
 }
 
 .imgSideBar{
@@ -131,23 +91,30 @@ h1{
     padding-right: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border: 1px navy solid;
+    //border: 1px navy solid;
+}
 
+.linkSocial{
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    //border: 1px navy solid; 
 }
 
 .barra{
-
     padding-left: 250px;
     background-color: #d9d9d9;
     border-radius: 5px;
-    border: 1px navy solid;
+    //border: 1px navy solid;
 }
 
 form#BarraRicerca{
-
     background-color: #d9d9d9;
     color: #666666; 
-    display: inline-block; 
     font-size: 10px;  
     padding: 2px; 
 }
