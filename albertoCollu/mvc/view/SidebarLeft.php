@@ -17,7 +17,7 @@ class SidebarLeft {
         $html .= "<ul>";
         $html .= "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"> Log in </a></li>";
         $html .= "<li style=\"list-style-image: url(css/img/chisiamo.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=chisiamo\"> Chi siamo </a></li>";
-        $html .= "<li style=\"list-style-image: url(css/img/contattaci.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=contattaci\"> Contattaci </a></li>";
+        $html .= "<li style=\"list-style-image: url(css/img/contattaci.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=contattaci\"> Servizio Clienti </a></li>";
         $html .= "</ul>";
         $html .= "</div>\n";
         $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
@@ -46,7 +46,6 @@ class SidebarLeft {
         $html .="<a style=\"text-decoration: none;\" href=\"https://www.youtube.com/\"><img src=\"css/img/youtube.png\"> </a>";
         $html .="<a style=\"text-decoration: none;\" href=\"#\"><img src=\"css/img/like.png\"> </a>";
         $html .= "</div>";
-        $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
         return $html;
     }
 
