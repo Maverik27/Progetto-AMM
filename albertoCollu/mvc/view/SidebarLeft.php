@@ -7,15 +7,21 @@
  */
 class SidebarLeft {
 
-    function __construct() {
-        
+    private $showLogin = TRUE;
+
+    function __construct($login = TRUE) {
+        $this->showLogin = ($login == TRUE);
     }
 
     public function __toString() {
         $html = "<div id=\"sidebar\">";
         $html .= "<div class=\"linkSideBar\">\n";
         $html .= "<ul>";
-        $html .= "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"> Log in </a></li>";
+        if ($this->showLogin) {
+            $html .= $this->showLogin();
+        } else {
+            $html .= $this->showLogout();
+        }
         $html .= "<li style=\"list-style-image: url(css/img/chisiamo.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=chisiamo\"> Chi siamo </a></li>";
         $html .= "<li style=\"list-style-image: url(css/img/contattaci.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=contattaci\"> Servizio Clienti </a></li>";
         $html .= "</ul>";
@@ -26,6 +32,18 @@ class SidebarLeft {
         $html .= $this->addSocialInSidebar();
         $html .= "</div>\n";
         return $html;
+    }
+
+    public function showLogin() {
+        return $html = "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"> Log in </a></li>";
+    }
+
+    public function showLogout() {
+        return $html = "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"> Logout </a></li>";
+    }
+
+    public function setShowLogin($showLogin = TRUE) {
+        $this->showLogin = ($showLogin == TRUE);
     }
 
     public function addImgInSidebar() {

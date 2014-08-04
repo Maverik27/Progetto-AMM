@@ -3,12 +3,19 @@
 error_reporting(E_ALL);
 ini_set('display_error', '1');
 
+require_once 'config.php';
 require_once 'mvc/controller/TecnoShopManager.php';
 require_once 'mvc/view/Page.php';
 
 $tecnoShopManager = new TecnoShopManager();
 $tecnoShopManager->setActive();
 $inputManager = $tecnoShopManager->getInputManager();
+$tecnoShop = $tecnoShopManager->getTecnoShop();
+$accessManager = $tecnoShopManager->getAccessManager();
+$userManager = $tecnoShopManager->getUserManager();
+
+echo $tecnoShop->getMsgError();
+//echo $tecnoShop->getDebugErr();
 
 $page = new Page();
 
@@ -17,6 +24,16 @@ $page->getHead()->setTitle("TecnoShop");
 $page->getHead()->addMeta("Content-Type", "application/xhtml+xml; charset = UTF-8");
 $page->getHead()->addLinkCss("css/Style.css");
 
+$user = $accessManager->getUser();
+
+if ($user) {
+    $page->getSidebarLeft()->setShowLogin(FALSE);
+} else {
+    $page->getSidebarLeft()->setShowLogin();
+}
+
+$loginError = $accessManager->getMsgError();
+echo $loginError;
 
 //stampo paginaTop
 echo $page->pageTop();

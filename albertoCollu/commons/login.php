@@ -1,13 +1,13 @@
 <div class="logIn">
-
-    <form method="post" action="javascript:void(0);" onsubmit="formSubmit();
-            return false;" id='shakeForm'>
-        <div id='shakeBox'>
-            <div id='msgBox' style="display:none;"></div>
-            <label>Email: <input type="email" value="" name="email" maxlength="30" /> 
-                <label>Password: <input type="password" value="" name="pw" maxlength="20" /></label>
-                <input type="submit" value="login" name="loginSubmit" /></label><br />
-        </div>
+    
+    <form action="index.php" method="post">
+        <label>Email</label>
+        <input type="text" name="email" value="">
+        <label>Password</label>
+        <input type="password" name="password" value="">
+        <input type="hidden" name="action" value="login">
+        <button type="submit">Login</button>
     </form>
+    
 </div>
 

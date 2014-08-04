@@ -24,6 +24,10 @@ class InputManager {
         "monitor",
         "portatili",
     );
+    public $setActions = array(
+        "login",
+        "logout",
+    );
 
     public function __construct() {
         $this->input = array();
@@ -35,6 +39,9 @@ class InputManager {
             switch ($key) {
                 case "page":
                     $arrayTemp = $this->setPages;
+                    break;
+                case "action":
+                    $arrayTemp = $this->setActions;
                     break;
                 default:
                     $this->input[$key] = $value;
