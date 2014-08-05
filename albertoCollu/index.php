@@ -7,6 +7,30 @@ require_once 'config.php';
 require_once 'mvc/controller/TecnoShopManager.php';
 require_once 'mvc/view/Page.php';
 
+$menu = Array(
+    Array(
+        "title" => "Desktop",
+        "link" => "index.php?page=desktop",
+        "img" => "css/img/Desktop.png",
+    ),
+    Array(
+        "title" => "Portatili",
+        "link" => "index.php?page=portatili",
+        "img" => "css/img/pcPortatili.png",
+    ),
+    Array(
+        "title" => "Monitor",
+        "link" => "index.php?page=monitor",
+        "img" => "css/img/Monitor.png",
+    ),
+    Array(
+        "title" => "Accessori",
+        "link" => "index.php?page=accessori",
+        "img" => "css/img/Accessori.png",
+    ),
+);
+
+
 $tecnoShopManager = new TecnoShopManager();
 $tecnoShopManager->setActive();
 $inputManager = $tecnoShopManager->getInputManager();
@@ -14,7 +38,7 @@ $tecnoShop = $tecnoShopManager->getTecnoShop();
 $accessManager = $tecnoShopManager->getAccessManager();
 $userManager = $tecnoShopManager->getUserManager();
 
-echo $tecnoShop->getMsgError();
+//echo $tecnoShop->getMsgError();
 //echo $tecnoShop->getDebugErr();
 
 $page = new Page();
@@ -25,21 +49,24 @@ $page->getHead()->addMeta("Content-Type", "application/xhtml+xml; charset = UTF-
 $page->getHead()->addLinkCss("css/Style.css");
 
 $user = $accessManager->getUser();
-$loginErr = $accessManager->getMsgError();
-echo $loginErr;
-
 if ($user) {
-    echo 'login effettuato!';
+    $page->getContent()->setShowLogin(FALSE);
 } else {
-    echo 'non sei loggato!';
+    $page->getContent()->setShowLogin();
 }
 
-if ($user) {
-    $page->getSidebarLeft()->setShowLogin(FALSE);
-} else {
-    $page->getSidebarLeft()->setShowLogin();
-}
+//$loginErr = $accessManager->getMsgError();
+//echo $loginErr;
+//
+//if ($user) {
+//    echo 'login effettuato!';
+//} else {
+//    echo 'non sei loggato!';
+//}
 
+for ($i = 0; $i < count($menu); $i++) {
+    $page->getSidebarLeft()->getProductsMenu()->addElement($menu[$i]["title"], $menu[$i]["link"], $menu[$i]["img"]);
+}
 
 
 //stampo paginaTop
@@ -66,6 +93,9 @@ switch ($inputManager->getInput("page")) {
         break;
     case "accessori":
         include 'commons/accessori.php';
+        break;
+    case "cerca":
+        include 'commons/cerca.php';
         break;
     default :
         include 'welcome.php';

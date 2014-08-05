@@ -10,8 +10,19 @@ require_once (__DIR__) . "/../model/TecnoShop.php";
  */
 class AccesManager {
 
+    const
+            ACCESS_FORBIDDEN = 0,
+            ACCESS_GUEST = 1,
+            ACCESS_BUYER = 2,
+            ACCESS_SELLER = 4,
+            ACCESS_ADMIN = 8,
+            ACCESS_NOBUYER = 12,
+            ACCESS_NOSELLER = 10,
+            ACCESS_PUBLIC = 15;
+
     private $user;
     private $msgError;
+    private static $accessLevel = AccesManager::ACCESS_GUEST;
 
     function __construct() {
         if (isset($_SESSION["user"])) {
@@ -50,4 +61,5 @@ class AccesManager {
         session_destroy();
         $this->user = NULL;
     }
+
 }

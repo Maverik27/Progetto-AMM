@@ -22,6 +22,7 @@ class InputManager {
         "accessori",
         "monitor",
         "portatili",
+        "cerca",
     );
     public $setActions = array(
         "login",
