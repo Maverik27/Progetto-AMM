@@ -14,7 +14,6 @@
 class InputManager {
 
     public $input;
-    public $setAction;
     public $setPages = array(
         "chisiamo",
         "contattaci",

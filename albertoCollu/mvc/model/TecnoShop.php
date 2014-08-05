@@ -18,7 +18,7 @@ class TecnoShop {
         TecnoShop::$database = new Database(USER_DB, PASSWORD_DB, NAME_DB);
         if (TecnoShop::$database->isConnected()) {
             $this->msgError = NULL;
-            $this->debugErr = "sei apposto";
+            $this->debugErr = "Connessione al Database Corretta\n";
         } else {
             $this->msgError = "Offline Error!! (" . TecnoShop::$database->getDatabase()->connect_errno . " / - / " . TecnoShop::$database->getDatabase()->connect_error . ")";
             TecnoShop::$database = NULL;

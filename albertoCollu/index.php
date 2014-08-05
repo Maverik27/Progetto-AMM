@@ -25,6 +25,14 @@ $page->getHead()->addMeta("Content-Type", "application/xhtml+xml; charset = UTF-
 $page->getHead()->addLinkCss("css/Style.css");
 
 $user = $accessManager->getUser();
+$loginErr = $accessManager->getMsgError();
+echo $loginErr;
+
+if ($user) {
+    echo 'login effettuato!';
+} else {
+    echo 'non sei loggato!';
+}
 
 if ($user) {
     $page->getSidebarLeft()->setShowLogin(FALSE);
@@ -32,8 +40,7 @@ if ($user) {
     $page->getSidebarLeft()->setShowLogin();
 }
 
-$loginError = $accessManager->getMsgError();
-echo $loginError;
+
 
 //stampo paginaTop
 echo $page->pageTop();

@@ -11,24 +11,16 @@
     padding: 2px;
     background-color: aliceblue;
     border-radius: 5px;
-    border: 1px navy solid;
-}
-
-h1{
-    color: white;
-    font: sans-serif;
-    font-size: 32px;
-    text-align:center;
-    font-style: italic; 
+    //border: 1px navy solid;
 }
 
 .header{
     position: relative;
-    bottom: 20px;
     border-radius: 3px;
-    background-image: url('img/header.jpg'); 
-    background-repeat: no-repeat;
-    height: 100px;
+    text-align: center;
+    padding-bottom: 25px;
+    background-color: #98B3B8;
+    height: 80px;
 }
 
 #sidebar{
@@ -38,33 +30,36 @@ h1{
     width:  180px;
     //border: 1px navy solid;
     //border-radius: 5px;
-    bottom: 16px;
+    bottom: -3px;
     background-color: whitesmoke; 
 }
 
 #content{
-    padding-top: 2px;
+    padding: 2px;
     position: relative;
     height: 829px;
     //border: 1px navy solid;
-    //border-radius: 5px;
     margin-left: 190px;
-    bottom: 847px;
+    bottom: 828px;
     background-color: whitesmoke;
 }
 
 #footer{ 
     position: relative;
-    background-image: url('img/header.jpg'); 
-    background-repeat: no-repeat;
-    height: 85px;
-    bottom: 861px;
+    background-color: #98B3B8;
+    height: 60px;
+    padding-top: 20px;
+    bottom: 824px;
     //border: 1px navy solid;
     border-radius: 3px;
     alignment-adjust: central;
     text-align: center;
 }
 
+.info{
+    position: relative;
+    //border: 1px navy solid;    
+}
 .content{
     padding: 1px;
     background-image: url(img/2.jpg);

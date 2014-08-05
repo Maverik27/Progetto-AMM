@@ -76,7 +76,7 @@ class User {
     public static function login($email, $password) {
         $db = TecnoShop::getDatabase();
         if ($db == NULL) {
-            echo 'dafuck';
+            echo 'Database Non trovato';
             return NULL;
         }
         /* assegno alla variabile table la tabella usersTable contenuta 
@@ -94,7 +94,7 @@ class User {
         $data = $db->query($query);
         
         if(count($data) == 0){
-            echo 'puppa';
+            echo 'dati query sbagliati';
             return NULL;
         }
         

@@ -9,7 +9,7 @@ host = localhost
 port = 3306
 username = root
 password =
-name = TecnoShop
+name = tecnoshop
 
 [TecnoShop]
 timezone = Europe/Rome 

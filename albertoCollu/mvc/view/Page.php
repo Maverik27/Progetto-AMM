@@ -57,10 +57,6 @@ class Page {
         return $this->header;
     }
 
-    public function getSiderLeft() {
-        return $this->sidebarLeft;
-    }
-
     public function getContent() {
         return $this->content;
     }

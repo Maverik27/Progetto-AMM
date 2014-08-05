@@ -7,15 +7,9 @@
  */
 class Header {
 
-    private $headerTitle;
-
-    public function __construct() {
-        $this->headerTitle = "<h1>TecnoShop</h1>";
-    }
-
     public function __toString() {
         $html = "<div class=\"header\">\n";
-        $html.= "<div class=\"title\">" . $this->headerTitle . "</div>";
+        $html .= "<img src=\"css/img/tecnoshop.png\">\n";
         $html .= "</div>";
         return $html;
     }

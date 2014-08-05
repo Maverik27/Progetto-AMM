@@ -22,8 +22,8 @@ class SidebarLeft {
         } else {
             $html .= $this->showLogout();
         }
-        $html .= "<li style=\"list-style-image: url(css/img/chisiamo.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=chisiamo\"> Chi siamo </a></li>";
-        $html .= "<li style=\"list-style-image: url(css/img/contattaci.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=contattaci\"> Servizio Clienti </a></li>";
+        $html .= "<li style=\"list-style-image: url(css/img/chisiamo.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=chisiamo\"><button type=\"submit\">Chi siamo</button></a></li>";
+        $html .= "<li style=\"list-style-image: url(css/img/contattaci.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=contattaci\"><button type=\"submit\">Servizio Clienti</button></a></li>";
         $html .= "</ul>";
         $html .= "</div>\n";
         $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
@@ -35,12 +35,18 @@ class SidebarLeft {
     }
 
     public function showLogin() {
-        return $html = "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"> Log in </a></li>";
+        return $html = "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"><button type=\"submit\">Login</button></a></li>";
     }
 
     public function showLogout() {
-        return $html = "<li style=\"list-style-image: url(css/img/login.png);\"> <a style=\"text-decoration: none;\" href=\"index.php?page=login\"> Logout </a></li>";
-    }
+        
+        //$html = "<li style=\"list-style-image: url(css/img/logout.png);\"> <a style=\"text-decoration: none;\"><button type=\"submit\">Logout</button></a></li>";
+        $html = "<form action=\"index.php?\" method=\"post\">\n";
+        $html .= "<input type=\"hidden\" name=\"action\" value=\"logout\"/>";
+        $html .= "<button type=\"submit\">Logout</button>";
+        $html .= "</form>";
+        return $html;
+        }
 
     public function setShowLogin($showLogin = TRUE) {
         $this->showLogin = ($showLogin == TRUE);
