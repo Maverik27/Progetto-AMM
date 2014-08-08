@@ -1,5 +1,7 @@
 <?php
 
+require_once "mvc/controller/TecnoShopManager.php";
+
 /**
  * Description of Content
  *
@@ -8,9 +10,11 @@
 class Content {
 
     private $showLogin = TRUE;
+    private $user;
 
     function __construct($login = TRUE) {
         $this->showLogin = ($login == TRUE);
+        $this->user = TecnoShopManager::getInstance()->getAccessManager()->getUser();
     }
 
     public function contentTop() {
@@ -33,7 +37,8 @@ class Content {
     }
 
     public function showLogout() {
-        $html = "<p class=\"barText\">Benvenuto! Ora potrai acquistare i nostri prodotti!";
+        $html = "<p class=\"barText\">Benvenuto " . $this->user->getName() . ' ' . $this->user->getSurname() .
+                " ora potrai acquistare i nostri prodotti!";
         $html .= "<form action=\"index.php?\" method=\"post\">\n";
         $html .= "<input type=\"hidden\" name=\"action\" value=\"logout\"/>";
         $html .= "<button class=\"logoutbutton\" type=\"submit\">Logout</button>";
@@ -46,7 +51,7 @@ class Content {
     }
 
     public function bar() {
-        $html = "<div class=\"barra\">\n"; 
+        $html = "<div class=\"barra\">\n";
         if ($this->showLogin) {
             $html .= $this->showLogin();
         } else {
