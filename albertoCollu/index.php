@@ -12,19 +12,19 @@ require_once 'mvc/view/Page.php';
  * Questo menu costituisce tutti gli elementi "dinamici" della sidebar, o almeno, di una parte della sidebar.
  * Sicomme lo stiamo creando per la prima volta qui nella index.php nessuno ci vieta di aggiungere un nuovo 
  * "campo" a ciascun array che compone il nostro menù. Questo campo sarà per l'appunto il livello d'accesso 
- * della pagine. Adesso di "default" gli ho messi tutti public perché non mi ricordo come volevi impostare
+ * della pagine. Adesso di "default" li ho messi tutti public perché non mi ricordo come volevi impostare
  * l'homepage, ma il campo "accessLevel", che corrisponde alla variabile "$predeterminedAccessLevel" spiegato
  * nell' AccessManager, dovrà essere imposta con il permesso corretto.
  * 
  * ESEMPIO :
- * Ci aspettiamo che "Portatili" rimani ad una pagina visibile solamente agli utenti "seller". Di conseguenza
+ * Ci aspettiamo che "Portatili" rimandi ad una pagina visibile solamente agli utenti "seller". Di conseguenza
  * questa pagina dovrà essere visibile solamente a loro e per riflesso agli utenti "admin". Motivo per cui il 
  * permesso adeguato sarà ACCESS_NOBUYER.
  * Ti ho fatto un esempio un po no sense ma è giusto per rendere bene il concetto.
  * 
  * 
  * N.B: Nella voce "accessori" ti ho messo permesso "NO_BUYER", per farti vedere come funzionano le cose. SE
- *      fai il login come "buyer" puoi notare che quella voca nella sidebar non è più presente. Poi ovviamente
+ *      fai il login come "buyer" puoi notare che quella voce nella sidebar non è più presente. Poi ovviamente
  *      le cose si cambiano.
  * 
  * Lo STEP 5 continua giu
@@ -105,6 +105,10 @@ for ($i = 0; $i < count($menu); $i++) {
         $page->getSidebarLeft()->getProductsMenu()->addElement($menu[$i]["title"], $menu[$i]["link"], $menu[$i]["img"]);
     }
 }
+
+//###############################################################################################################################
+//una volta fatto il login con qualsiasi utente se clicco su una pagina qualunque fa il logout e mi visualizza il content vuoto #
+//###############################################################################################################################
 
 
 //stampo paginaTop

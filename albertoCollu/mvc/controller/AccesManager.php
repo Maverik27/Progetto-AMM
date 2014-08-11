@@ -122,7 +122,7 @@ class AccesManager {
      * Successivamente implementiamo il metodo "checkAccess" (che USEREMO NELLA INDEX.PHP) che ci servirà 
      * per stabilire quali elementi della sidebar l'utente appena loggato potrà visualizzare.
      * 
-     * DOMANDA: Si ok ho capito tutto, ma la pagina come la protegiamo effettivamente ?
+     * DOMANDA: Si ok ho capito tutto, ma la pagina come la proteggiamo effettivamente ?
      * RISPOSTA: Non avere fretta, questo mistero sarà svelato nello STEP 6.
      */
     
