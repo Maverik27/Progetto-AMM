@@ -214,3 +214,16 @@
     top:50px;
     left: 100px;
 }
+
+.dataChange{
+    list-style-image: url(img/edit.png);
+ }
+
+.chargeCredit{
+    list-style-image: url(img/wallet.png);
+}
+
+.linkAdd{
+    position: relative;
+    bottom: 10px;
+}

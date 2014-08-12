@@ -60,8 +60,41 @@ $menu = Array(
         "img" => "css/img/vetrina.png",
         "accessLevel" => AccesManager::ACCESS_NOBUYER
     ),
+    //solo per il guest
+    Array(
+        "title" => "Desktop",
+        "link" => "index.php?page=desktopGuest",
+        "img" => "css/img/Desktop.png",
+        "accessLevel" => AccesManager::ACCESS_GUEST
+    ),
+    Array(
+        "title" => "Portatili",
+        "link" => "index.php?page=portatiliGuest",
+        "img" => "css/img/pcPortatili.png",
+        "accessLevel" => AccesManager::ACCESS_GUEST
+    ),
+    Array(
+        "title" => "Accessori",
+        "link" => "index.php?page=accessoriGuest",
+        "img" => "css/img/Accessori.png",
+        "accessLevel" => AccesManager::ACCESS_GUEST
+    ),
 );
 
+$additionalMenu = Array(
+    Array(
+        "title" => "Modifica Profilo",
+        "link" => "index.php?page=profile",
+        "class" => "dataChange",
+        "accessLevel" => AccesManager::ACCESS_NOADMIN
+    ),
+    Array(
+        "title" => "Ricarica Credito",
+        "link" => "index.php?page=ricarica",
+        "class" => "chargeCredit",
+        "accessLevel" => AccesManager::ACCESS_NOSELLER
+    )
+);
 
 $tecnoShopManager = new TecnoShopManager();
 $tecnoShopManager->setActive();
@@ -85,6 +118,11 @@ $user = $accessManager->getUser();
 for ($i = 0; $i < count($menu); $i++) {
     if (AccesManager::checkAccess($menu[$i]["accessLevel"])) {
         $page->getSidebarLeft()->getProductsMenu()->addElement($menu[$i]["title"], $menu[$i]["link"], $menu[$i]["img"]);
+    }
+}
+for ($i = 0; $i < count($additionalMenu); $i++) {
+    if (AccesManager::checkAccess($additionalMenu[$i]["accessLevel"])) {
+        $page->getSidebarLeft()->getAdditionalMenu()->addElement($additionalMenu[$i]["title"], $additionalMenu[$i]["link"], $additionalMenu[$i]["class"]);
     }
 }
 
@@ -137,6 +175,17 @@ switch ($inputManager->getInput("page")) {
     case "accessori":
         include 'commons/accessori.php';
         break;
+    //SOLOGUEST
+    case "desktopGuest":
+        include 'commons/desktopGuest.php';
+        break;
+    case "portatiliGuest":
+        include 'commons/portatiliGuest.php';
+        break;
+    case "accessoriGuest":
+        include 'commons/accessoriGuest.php';
+        break;
+    //FINE GUEST
     case "ricarica":
         include 'commons/ricarica.php';
         break;

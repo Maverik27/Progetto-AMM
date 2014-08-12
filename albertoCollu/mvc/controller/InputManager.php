@@ -27,6 +27,9 @@ class InputManager {
         "vetrina",
         "nuovoProdotto",
         "contattaci",
+        "desktopGuest",
+        "accessoriGuest",
+        "portatiliGuest",
     );
     public $setActions = array(
         "login",
