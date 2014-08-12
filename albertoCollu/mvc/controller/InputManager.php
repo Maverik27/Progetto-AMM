@@ -15,18 +15,29 @@ class InputManager {
 
     public $input;
     public $setPages = array(
+        "registrati",
         "chisiamo",
-        "contattaci",
         "login",
         "desktop",
         "accessori",
-        "monitor",
         "portatili",
         "cerca",
+        "profile",
+        "ricarica",
+        "vetrina",
+        "nuovoProdotto",
+        "contattaci",
     );
     public $setActions = array(
         "login",
         "logout",
+        "register",
+        "changeData",
+        "addCredit",
+    );
+    public $validIdentity = array(
+        User::IDENTITY_BUYER,
+        User::IDENTITY_SELLER,
     );
 
     public function __construct() {
@@ -42,6 +53,9 @@ class InputManager {
                     break;
                 case "action":
                     $arrayTemp = $this->setActions;
+                    break;
+                case "identity":
+                    $arrayTemp = $this->validIdentity;
                     break;
                 default:
                     $this->input[$key] = $value;

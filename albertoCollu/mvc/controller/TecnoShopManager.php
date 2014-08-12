@@ -20,14 +20,15 @@ class TecnoShopManager {
     private $userManager;
 
     public function __construct() {
+        TecnoShopManager::$instance = $this;
         TecnoShopManager::$active = FALSE;
+        session_start();
+
         $this->tecnoShop = new TecnoShop();
         $this->inputManager = new InputManager();
         $this->accessManager = new AccesManager();
         $this->userManager = new UserManager($this->accessManager->getUser());
-        session_start();
         $this->manageInput();
-        TecnoShopManager::$instance = $this;
     }
 
     public static function getInstance() {
@@ -53,7 +54,7 @@ class TecnoShopManager {
     public function getUserManager() {
         return $this->userManager;
     }
-    
+
     /*
      * STEP 6:
      * 
@@ -75,9 +76,9 @@ class TecnoShopManager {
      * 
      * Quindi concludiamo con lo STEP 7 andando a invocare questo metodo in tutte le pagine della cartella "commons".
      */
-    
+
     public static function protect($accessLevel) {
-        if(TecnoShopManager::$active && AccesManager::checkAccess($accessLevel)) {
+        if (TecnoShopManager::$active && AccesManager::checkAccess($accessLevel)) {
             
         } else {
             die();
@@ -99,7 +100,31 @@ class TecnoShopManager {
             case "logout":
                 $this->accessManager->logout();
                 break;
-
+            case "register":
+                $this->inputManager->addInputToArray("email", $_POST);
+                $this->inputManager->addInputToArray("password", $_POST);
+                $this->inputManager->addInputToArray("repeatPassword", $_POST);
+                $this->inputManager->addInputToArray("name", $_POST);
+                $this->inputManager->addInputToArray("surname", $_POST);
+                $this->inputManager->addInputToArray("identity", $_POST);
+                $this->inputManager->addInputToArray("address", $_POST);
+                if($this->inputManager->getInput("password") == $this->inputManager->getInput("repeatPassword")){
+                    $this->accessManager->register(
+                            $this->inputManager->getInput("email"),
+                            $this->inputManager->getInput("password"),
+                            $this->inputManager->getInput("name"),
+                            $this->inputManager->getInput("surname"),
+                            $this->inputManager->getInput("identity"),
+                            $this->inputManager->getInput("address")
+                            );
+                }
+                break;
+            case "changeData":
+                echo 'modifiche dati effettuate';
+                break;
+            case "addCredit":
+                echo 'modifiche credito effettuate';
+                break;
             default :
                 break;
         }

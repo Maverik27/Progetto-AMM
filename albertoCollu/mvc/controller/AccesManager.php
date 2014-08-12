@@ -16,12 +16,15 @@ class AccesManager {
             ACCESS_BUYER = 2,
             ACCESS_SELLER = 4,
             ACCESS_ADMIN = 8,
+            ACCESS_EVERYBODY = 14,
             ACCESS_NOBUYER = 12,
             ACCESS_NOSELLER = 10,
+            ACCESS_NOADMIN = 6,
             ACCESS_PUBLIC = 15;
 
     private $user;
     private $msgError;
+    private $isRegistered = FALSE;
     // Di default il livello d'accesso è GUEST
     private static $accessLevel = AccesManager::ACCESS_GUEST;
 
@@ -49,6 +52,9 @@ class AccesManager {
         return $this->user;
     }
 
+    public function isRegistered() {
+        return $this->isRegistered;
+    }
     /*
      * Molto semplicemente questo metodo a seconda dell'identità, passatagli come parametro
      * aggiorna o ripristina (a seconda di dove utilizzato) il livello d'accesso.
@@ -125,7 +131,7 @@ class AccesManager {
      * DOMANDA: Si ok ho capito tutto, ma la pagina come la proteggiamo effettivamente ?
      * RISPOSTA: Non avere fretta, questo mistero sarà svelato nello STEP 6.
      */
-    
+
     /*
      * Questo metodo effettua l'and logico tra il livello d'accesso dell'utente corrente e il livello d'accesso
      * della pagine che noi stessi abbiamo prestabilito.
@@ -148,10 +154,11 @@ class AccesManager {
      * dei "seller".
      *
      */
+
     public static function checkGroupAccess($accessLevel, $predeterminedAccessLevel) {
         return ($accessLevel & $predeterminedAccessLevel);
     }
-    
+
     /*
      * Questo metodo come detto precedentemente, verrà utilizzato nella index come controllo per poter far
      * visualizzare all'utente corrente determinati elementi della sidebar. Quindi se l'utente è "seller" 
@@ -160,8 +167,17 @@ class AccesManager {
      * su).
      * s
      */
+
     public static function checkAccess($predeterminedAccessLevel) {
         return AccesManager::checkGroupAccess(AccesManager::$accessLevel, $predeterminedAccessLevel);
+    }
+
+    public function register($email, $password, $name, $surname, $identity, $address) {
+        $result = User::realRegister($email, TecnoShop::sha1Password($password), $name, $surname, $identity, $address);
+        if($result) {
+            $this->isRegistered = TRUE;
+        }
+        return $result;
     }
 
 }

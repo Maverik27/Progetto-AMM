@@ -1,20 +1,22 @@
-<?php 
-/*
- * STEP 7:
- * 
- * Incluso il nostro controller principale e invoco il metodo "protect" che ci protegge le 
- * pagine.
- * 
- * Nota due cose:
- * 
- * 1) Includendo "TecnoShopManager", che a sua volta include "AccessManager", posso accedere
- *    tranquillamente alle costanti, dichiarate in "AccessManager", utili per proteggere le pagine
- * 
- * 2) Il livello d'accesso che passo come paramente DEVE essere lo stesso che ho dato nell'array $menu
- *    nella index.php, perché queste sono pagine raggiungili per l'appunto dalla sidebar.
- */
+<?php
 require_once 'mvc/controller/TecnoShopManager.php';
 TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
 ?>
 
-<h2>CONTATTACI</h2>
+<div class="contattaci">
+    <div class="contTitle">
+        <h2>Serve aiuto? Contattaci!</h2>
+    </div>
+    <div class="secText"><h4>Inviaci un' email:</h4></div>
+    <a href="mailto:albe.collu@gmail.com"><img class="mail" src="css/img/email.png"></a>
+    <div class="secText"><h4>Oppure chiama i numeri gratuiti:</h4></div>
+    <ul class="phonefax">
+        <li style="list-style-image: url(css/img/tel.png)">Telefono 1: 06-7951254</li>
+        <li style="list-style-image: url(css/img/tel.png)">Telefono 2: 06-2459157</li>
+    </ul>
+    <div class="secText"><h4>Oppure inviaci un Fax ai numeri:</h4></div>
+    <ul class="phonefax">
+        <li style="list-style-image: url(css/img/fax.png)">Fax 1:      06-4982573</li>
+        <li style="list-style-image: url(css/img/fax.png)">Fax 2:      06-9757642</li>
+    </ul>
+</div>

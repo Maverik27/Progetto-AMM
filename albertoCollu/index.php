@@ -34,24 +34,30 @@ $menu = Array(
         "title" => "Desktop",
         "link" => "index.php?page=desktop",
         "img" => "css/img/Desktop.png",
-        "accessLevel" => AccesManager::ACCESS_PUBLIC
+        "accessLevel" => AccesManager::ACCESS_NOSELLER
     ),
     Array(
         "title" => "Portatili",
         "link" => "index.php?page=portatili",
         "img" => "css/img/pcPortatili.png",
-        "accessLevel" => AccesManager::ACCESS_PUBLIC
-    ),
-    Array(
-        "title" => "Monitor",
-        "link" => "index.php?page=monitor",
-        "img" => "css/img/Monitor.png",
-        "accessLevel" => AccesManager::ACCESS_PUBLIC
+        "accessLevel" => AccesManager::ACCESS_NOSELLER
     ),
     Array(
         "title" => "Accessori",
         "link" => "index.php?page=accessori",
         "img" => "css/img/Accessori.png",
+        "accessLevel" => AccesManager::ACCESS_NOSELLER
+    ),
+    Array(
+        "title" => "Nuovo Prodotto",
+        "link" => "index.php?page=nuovoProdotto",
+        "img" => "css/img/addPc.png",
+        "accessLevel" => AccesManager::ACCESS_NOBUYER
+    ),
+    Array(
+        "title" => "Vetrina Prodotti",
+        "link" => "index.php?page=vetrina",
+        "img" => "css/img/vetrina.png",
         "accessLevel" => AccesManager::ACCESS_NOBUYER
     ),
 );
@@ -75,6 +81,13 @@ $page->getHead()->addMeta("Content-Type", "application/xhtml+xml; charset = UTF-
 $page->getHead()->addLinkCss("css/Style.css");
 
 $user = $accessManager->getUser();
+
+for ($i = 0; $i < count($menu); $i++) {
+    if (AccesManager::checkAccess($menu[$i]["accessLevel"])) {
+        $page->getSidebarLeft()->getProductsMenu()->addElement($menu[$i]["title"], $menu[$i]["link"], $menu[$i]["img"]);
+    }
+}
+
 if ($user) {
     $page->getContent()->setShowLogin(FALSE);
 } else {
@@ -100,15 +113,6 @@ if ($user) {
  * 
  * N.B: Per lo STEP 6 vedi TecnoShopManager
  */
-for ($i = 0; $i < count($menu); $i++) {
-    if (AccesManager::checkAccess($menu[$i]["accessLevel"])) {
-        $page->getSidebarLeft()->getProductsMenu()->addElement($menu[$i]["title"], $menu[$i]["link"], $menu[$i]["img"]);
-    }
-}
-
-//###############################################################################################################################
-//una volta fatto il login con qualsiasi utente se clicco su una pagina qualunque fa il logout e mi visualizza il content vuoto #
-//###############################################################################################################################
 
 
 //stampo paginaTop
@@ -118,11 +122,11 @@ switch ($inputManager->getInput("page")) {
     case "login":
         include 'commons/login.php';
         break;
+    case "registrati":
+        include 'commons/registrati.php';
+        break;
     case "chisiamo":
         include 'commons/chisiamo.php';
-        break;
-    case "contattaci":
-        include 'commons/contattaci.php';
         break;
     case "desktop":
         include 'commons/desktop.php';
@@ -130,14 +134,26 @@ switch ($inputManager->getInput("page")) {
     case "portatili":
         include 'commons/portatili.php';
         break;
-    case "monitor":
-        include 'commons/monitor.php';
-        break;
     case "accessori":
         include 'commons/accessori.php';
         break;
+    case "ricarica":
+        include 'commons/ricarica.php';
+        break;
+    case "profile":
+        include 'commons/profile.php';
+        break;
+    case "vetrina":
+        include 'commons/vetrina.php';
+        break;
+    case "nuovoProdotto":
+        include 'commons/nuovoProdotto.php';
+        break;
     case "cerca":
         include 'commons/cerca.php';
+        break;
+    case "contattaci":
+        include 'commons/contattaci.php';
         break;
     default :
         include 'welcome.php';

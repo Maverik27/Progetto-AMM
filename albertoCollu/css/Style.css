@@ -19,7 +19,8 @@
     border-radius: 3px;
     text-align: center;
     padding-bottom: 25px;
-    background-color: #98B3B8;
+    background-color: #999999;
+    //background-color: #98B3B8;
     height: 80px;
 }
 
@@ -28,32 +29,32 @@
     position: relative;
     height: 827px;
     width:  180px;
-    //border: 1px navy solid;
-    //border-radius: 5px;
     bottom: -3px;
     background-color: whitesmoke; 
+    //border: 1px navy solid;
 }
 
 #content{
     padding: 2px;
     position: relative;
-    height: 829px;
-    //border: 1px navy solid;
+    height: 827px;
     margin-left: 190px;
-    bottom: 828px;
+    bottom: 830px;
     background-color: whitesmoke;
+    //border: 1px navy solid;
 }
 
 #footer{ 
     position: relative;
-    background-color: #98B3B8;
+    background-color: #999999;
+    //background-color: #98B3B8;
     height: 60px;
     padding-top: 20px;
-    bottom: 824px;
-    //border: 1px navy solid;
+    bottom: 827px;
     border-radius: 3px;
     alignment-adjust: central;
     text-align: center;
+    //border: 1px navy solid;
 }
 
 .info{
@@ -65,7 +66,8 @@
     border-radius: 2px;
     text-align: center;
     padding: 10px;
-    height: 759px;
+    height: 741px;
+    //border: 1px navy solid;  
 }
 
 .linkSideBar{
@@ -98,6 +100,17 @@
     //border: 1px navy solid; 
 }
 
+.buyerFeatures{
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    text-align: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    //border: 1px navy solid;
+}
+
 .logoutbutton{
     margin-left: 640px;
     position: relative;
@@ -105,31 +118,99 @@
 }
 
 .loginbutton{
-    margin-left: 640px;
+    margin-left: 635px;
     position: relative;
     bottom: 34px;
 }
 
 .barra{
     position: relative;
-    bottom: 15px;
+    bottom: 14px;
     background-color: #d9d9d9;
     border-radius: 2px;
-    //border: 1px navy solid;
     height: 31px;
+    //border: 1px navy solid;
 }
 
 .barText{
     text-align: left;
     padding-left: 10px;
-    //border: 1px navy solid;
     position: relative;
-    top: 5px;
+    top: 6px;
+    //border: 1px navy solid;
 }
 
 .cerca{
-    //border: 1px navy solid;
     border-radius: 1px;
     position: relative;
-    bottom: 6px;
+    //border: 1px navy solid;
+}
+
+.registration{
+    //border: 1px navy solid;
+    position: relative;
+    top: 50px;
+    text-align: left;
+    display: inline-block;
+    width: 400px;
+}
+
+.changeProfile{
+    //border: 1px navy solid;
+    position: relative;
+    top: 50px;
+    text-align: left;
+    display: inline-block;
+    width: 400px;
+}
+
+.credit{
+    //border: 1px navy solid;
+    position: relative;
+    top: 50px;
+    text-align: left;
+    display: inline-block;
+    width: 400px;
+}
+
+::-webkit-input-placeholder{
+    color: black;
+}
+.titleReg{
+    //border: 1px navy solid;
+    text-align: center;
+}
+
+.inReg{
+    //border: 1px navy solid;
+    border-radius: 5px;
+    position: relative;
+    float: right;
+}
+
+.chisiamoList{
+    position: relative;
+    top:200px;
+    left: 300px;
+    list-style-type: none;
+}
+
+.chisiamo{
+    text-align: left;
+}
+
+.mail{
+    position: relative;
+    top: 50px;
+}
+
+.secText{
+    position: relative;
+    top: 50px;
+}
+
+.phonefax{
+    position: relative;
+    top:50px;
+    left: 100px;
 }

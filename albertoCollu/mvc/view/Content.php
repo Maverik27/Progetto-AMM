@@ -31,14 +31,13 @@ class Content {
     }
 
     public function showLogin() {
-        $html = "<p class=\"barText\">Effettua l'accesso al nostro sito per acquistare i nostri prodotti!</p>";
+        $html = "<p class=\"barText\">Effettua l'accesso per acquistare e vendere sul nostro sito!</p>";
         $html .= "<a style=\"text-decoration: none;\" href=\"index.php?page=login\"><img class=\"loginbutton\" src=\"css/img/login.png\"></a>";
         return $html;
     }
 
     public function showLogout() {
-        $html = "<p class=\"barText\">Benvenuto " . $this->user->getName() . ' ' . $this->user->getSurname() .
-                " ora potrai acquistare i nostri prodotti!";
+        $html = "<p class=\"barText\">Benvenuto <a style=\"text-decoration: none;\" href=\"index.php?page=profile\">" . $this->user->getName() . "!</a>";
         $html .= "<form action=\"index.php?\" method=\"post\">\n";
         $html .= "<input type=\"hidden\" name=\"action\" value=\"logout\"/>";
         $html .= "<button class=\"logoutbutton\" type=\"submit\">Logout</button>";

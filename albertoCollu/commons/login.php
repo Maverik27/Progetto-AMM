@@ -13,8 +13,8 @@
  * 2) Il livello d'accesso che passo come paramente DEVE essere lo stesso che ho dato nell'array $menu
  *    nella index.php, perché queste sono pagine raggiungili per l'appunto dalla sidebar.
  */
-require_once 'mvc/controller/TecnoShopManager.php';
-TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
+//require_once 'mvc/controller/TecnoShopManager.php';
+//TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
 ?>
 
 <div class="logIn">

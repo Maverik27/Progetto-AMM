@@ -14,8 +14,18 @@ class User {
     private $password;
     private $name;
     private $surname;
+    private $address;
     private $identity;
     private $credit;
+
+    const IDENTITY_GUEST = "",
+            IDENTITY_BUYER = "buyer",
+            IDENTITY_SELLER = "seller",
+            IDENTITY_ADMIN = "admin";
+    const EMAIL = "email",
+            NAME = "name",
+            SURNAME = "surname",
+            ADDRESS = "address";
 
     function __construct() {
         
@@ -43,6 +53,10 @@ class User {
 
     public function setCredit($credit) {
         $this->credit = $credit;
+    }
+
+    public function getAddress() {
+        return $this->address;
     }
 
     public function getId() {
@@ -84,32 +98,84 @@ class User {
          * che fa riferimento al file config.php dove il name del database è TecnoShop
          */
         $table = NAME_DB . "." . ModelDb::$mapperDb["tables"]["usersTable"];
-        
+
         //metodi per la gestione della sicurezza dell'input
         $email = $db->getDatabase()->escape_string($email);
         $password = $db->getDatabase()->escape_string($password);
-        
+
         $query = "SELECT * FROM $table WHERE " . ModelDb::$mapperDb["usersTable"]["email"] . "=\"$email\" AND " . ModelDb::$mapperDb["usersTable"]["password"] . "=\"$password\" limit 1;";
-        
+
         $data = $db->query($query);
-        
-        if(count($data) == 0){
+
+        if (count($data) == 0) {
             echo 'dati query sbagliati';
             return NULL;
         }
-        
+
         $user = new User();
         //$userdata = array();
-        
+
         $user->id = $data[0][ModelDb::$mapperDb["usersTable"]["id"]];
         $user->email = $data[0][ModelDb::$mapperDb["usersTable"]["email"]];
         $user->password = $data[0][ModelDb::$mapperDb["usersTable"]["password"]];
         $user->name = $data[0][ModelDb::$mapperDb["usersTable"]["name"]];
         $user->surname = $data[0][ModelDb::$mapperDb["usersTable"]["surname"]];
+        $user->address = $data[0][ModelDb::$mapperDb["usersTable"]["address"]];
         $user->identity = $data[0][ModelDb::$mapperDb["usersTable"]["identity"]];
         $user->credit = $data[0][ModelDb::$mapperDb["usersTable"]["credit"]];
-        
+
         return $user;
+    }
+
+    public static function realRegister($email, $password, $name, $surname, $identity, $address) {
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+
+        $email = $db->getDatabase()->escape_string($email);
+        $password = $db->getDatabase()->escape_string($password);
+        $name = $db->getDatabase()->escape_string($name);
+        $surname = $db->getDatabase()->escape_string($surname);
+        $address = $db->getDatabase()->escape_string($address);
+
+        $query = "INSERT INTO `" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["usersTable"] . "` (`"
+                . ModelDb::$mapperDb["usersTable"]["id"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["email"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["password"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["name"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["surname"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["address"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["identity"] . "`, `"
+                . ModelDb::$mapperDb["usersTable"]["credit"] . "` ) VALUE ("
+                . "NULL, '"
+                . "$email', '"
+                . "$password', '"
+                . "$name', '"
+                . "$surname', '"
+                . "$address', '"
+                . "$identity', '"
+                . "0.0');";
+
+        if ($db->getRowsAfterQuery($query) == 1) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public static function updateUser($idUser, $arrayChange) {
+
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+        $table = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["usersTable"] . "`";
+        $idUser = $db->getDatabase()->escape_string($idUser);
+        foreach ($arrayChange as $key => $value) {
+            $arrayChange[$key] = $db->getDatabase()->escape_string($value);
+        }
+        // punto in cui andremo a fare l'update vero e proprio dei campi che sono stati modificati
     }
 
 }

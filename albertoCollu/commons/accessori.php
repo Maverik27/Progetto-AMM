@@ -14,7 +14,7 @@
  *    nella index.php, perché queste sono pagine raggiungili per l'appunto dalla sidebar.
  */
 require_once 'mvc/controller/TecnoShopManager.php';
-TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
+TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
 ?>
 
 <h2>PAGINA ACCESSORI</h2>

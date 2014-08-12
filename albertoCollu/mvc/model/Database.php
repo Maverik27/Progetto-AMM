@@ -20,6 +20,7 @@ class Database {
             $this->connected = TRUE;
         }
     }
+
     public function getDatabase() {
         return $this->database;
     }
@@ -27,19 +28,23 @@ class Database {
     public function isConnected() {
         return $this->connected;
     }
-    
-    public function query($query){
+
+    public function query($query) {
         $tableTemp = array();
         // richiamo il metodo query sull'oggetto database di tipo mysqli 
         $result = $this->database->query($query);
-        if(is_object($result)) {
+        if (is_object($result)) {
             $i = 0;
             while ($r = $result->fetch_assoc()) {
                 $tableTemp[$i++] = $r;
             }
         }
-        return $tableTemp;        
+        return $tableTemp;
     }
 
-    
+    public function getRowsAfterQuery($query) {
+        $this->database->query($query);
+        return $this->database->affected_rows; 
+    }
+
 }
