@@ -10,6 +10,7 @@ require_once (__DIR__) . "/../model/User.php";
 class UserManager {
 
     private $user = NULL;
+    private $isChange = FALSE;
 
     public function __construct($user = NULL) {
         $this->user = $user;
@@ -21,6 +22,10 @@ class UserManager {
 
     public function setUser($user) {
         $this->user = $user;
+    }
+
+    public function isChange() {
+        return $this->isChange;
     }
 
     public function changeProfile($user) {
@@ -41,7 +46,9 @@ class UserManager {
             $arrayChange[User::ADDRESS] = $user->getAddress();
         }
         //metodo he effettua la query per cambiare i dati dell'utente (id è garanzia di unicità dell'utente / arrayChange contiene le eventuali modifiche del profilo)
-        return User::updateUser($this->user->getId(), $arrayChange);
+        $result = User::updateUser($this->user->getId(), $arrayChange);
+        $this->isChange = TRUE;
+        return $result;
     }
 
     public function realUpdateCredit($import) {

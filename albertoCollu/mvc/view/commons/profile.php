@@ -2,8 +2,13 @@
 require_once 'mvc/controller/TecnoShopManager.php';
 TecnoShopManager::protect(AccesManager::ACCESS_EVERYBODY);
 $user= TecnoShopManager::getInstance()->getAccessManager()->getUser();
+$isChange =TecnoShopManager::getInstance()->getUserManager()->isChange();
 ?>
 
+<?php
+if(!$isChange)
+{
+?>
 <div class="titleReg"><h1>Modifica i tuoi dati</h1></div>
 
 <div class="changeProfile">
@@ -31,3 +36,9 @@ $user= TecnoShopManager::getInstance()->getAccessManager()->getUser();
         <button class="inReg" type="submit" name="action" value="changeData">Conferma modifiche</button>
     </form>
 </div>
+
+<?php 
+} else {
+    echo 'DATI MODIFICATI CORRETTAMENTE';
+}
+?>
