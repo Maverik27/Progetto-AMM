@@ -173,9 +173,9 @@
     width: 400px;
 }
 
-::-webkit-input-placeholder{
+/*::-webkit-input-placeholder{
     color: black;
-}
+}*/
 .titleReg{
     //border: 1px navy solid;
     text-align: center;
@@ -217,10 +217,22 @@
 
 .dataChange{
     list-style-image: url(img/edit.png);
- }
+}
 
 .chargeCredit{
     list-style-image: url(img/wallet.png);
+}
+
+.searchLink{
+    list-style-image: url(img/cerca.png);
+}
+
+.weLink{
+    list-style-image: url(img/chisiamo.png);
+}
+
+.registerLink{
+    list-style-image: url(img/registrati.png);
 }
 
 .linkAdd{

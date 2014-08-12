@@ -108,22 +108,41 @@ class TecnoShopManager {
                 $this->inputManager->addInputToArray("surname", $_POST);
                 $this->inputManager->addInputToArray("identity", $_POST);
                 $this->inputManager->addInputToArray("address", $_POST);
-                if($this->inputManager->getInput("password") == $this->inputManager->getInput("repeatPassword")){
+                if ($this->inputManager->getInput("password") == $this->inputManager->getInput("repeatPassword")) {
                     $this->accessManager->register(
-                            $this->inputManager->getInput("email"),
-                            $this->inputManager->getInput("password"),
-                            $this->inputManager->getInput("name"),
-                            $this->inputManager->getInput("surname"),
-                            $this->inputManager->getInput("identity"),
+                            $this->inputManager->getInput("email"), 
+                            $this->inputManager->getInput("password"), 
+                            $this->inputManager->getInput("name"), 
+                            $this->inputManager->getInput("surname"), 
+                            $this->inputManager->getInput("identity"), 
                             $this->inputManager->getInput("address")
-                            );
+                    );
                 }
                 break;
             case "changeData":
-                echo 'modifiche dati effettuate';
+                $this->inputManager->addInputToArray("email", $_POST);
+                $this->inputManager->addInputToArray("name", $_POST);
+                $this->inputManager->addInputToArray("surname", $_POST);
+                $this->inputManager->addInputToArray("address", $_POST);
+                $userTemp = new User();
+                $userTemp->setEmail($this->inputManager->getInput("email"));
+                $userTemp->setName($this->inputManager->getInput("name"));
+                $userTemp->setSurname($this->inputManager->getInput("surname"));
+                $userTemp->setAddress($this->inputManager->getInput("address"));
+                //con questo aggiorno il DB ma non i campi dell'utente del sito in sessione
+                $this->userManager->changeProfile($userTemp);
+                //da qui aggiorno snche i campi dell'utente del sito con le modifiche
+                $this->accessManager->getUser()->setEmail($userTemp->getEmail());
+                $this->accessManager->getUser()->setName($userTemp->getName());
+                $this->accessManager->getUser()->setSurname($userTemp->getSurname());
+                $this->accessManager->getUser()->setAddress($userTemp->getAddress());
                 break;
             case "addCredit":
-                echo 'modifiche credito effettuate';
+                $this->inputManager->addInputToArray("credit", $_POST);
+                $creditUpdated = $this->accessManager->getUser()->getCredit() + $this->inputManager->getInput("credit");
+                if($this->userManager->realUpdateCredit($creditUpdated)){
+                    $this->accessManager->getUser()->setCredit($creditUpdated);
+                }
                 break;
             default :
                 break;

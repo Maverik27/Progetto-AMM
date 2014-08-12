@@ -2,6 +2,7 @@
 
 require_once 'ProductsMenu.php';
 require_once 'AdditionalMenu.php';
+require_once 'StartMenu.php';
 
 /**
  * Description of SidebarLeft
@@ -12,21 +13,17 @@ class SidebarLeft {
 
     private $productsMenu;
     private $additionalMenu;
+    private $startMenu;
 
     function __construct() {
         $this->productsMenu = new ProductsMenu();
         $this->additionalMenu = new AdditionalMenu();
+        $this->startMenu = new StartMenu();
     }
 
     public function __toString() {
         $html = "<div id=\"sidebar\">";
-        $html .= "<div class=\"linkSideBar\">\n";
-        $html .= "<ul>";
-        $html .= "<li style=\"list-style-image: url(css/img/cerca.png);\"> <a class=\"linkAdd\" style=\"text-decoration: none;\" href=\"index.php?page=cerca\">Cerca nel Sito</a></li>";
-        $html .= "<li style=\"list-style-image: url(css/img/chisiamo.png);\"> <a class=\"linkAdd\" style=\"text-decoration: none;\" href=\"index.php?page=chisiamo\">Chi siamo</a></li>";
-        $html .= "<li style=\"list-style-image: url(css/img/registrati.png);\"> <a class=\"linkAdd\" style=\"text-decoration: none;\" href=\"index.php?page=registrati\">Registrati</a></li>";
-        $html .= "</ul>";
-        $html .= "</div>\n";
+        $html .= $this->startMenu;
         $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
         $html .= $this->productsMenu;
         $html .= "<hr align=\"center\" size=\"1\" color=\"#17769C\">";
@@ -43,6 +40,10 @@ class SidebarLeft {
 
     public function getAdditionalMenu() {
         return $this->additionalMenu;
+    }
+
+    public function getStartMenu() {
+        return $this->startMenu;
     }
 
     public function addSocialInSidebar() {

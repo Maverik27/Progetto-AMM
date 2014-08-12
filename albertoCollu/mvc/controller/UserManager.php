@@ -44,4 +44,11 @@ class UserManager {
         return User::updateUser($this->user->getId(), $arrayChange);
     }
 
+    public function realUpdateCredit($import) {
+        if ($this->user == NULL) {
+            return NULL;
+        }
+        return User::realUpdateCredit($this->user->getId(), $import);
+    }
+
 }

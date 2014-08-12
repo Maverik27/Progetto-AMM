@@ -96,6 +96,27 @@ $additionalMenu = Array(
     )
 );
 
+$startMenu = Array(
+    Array(
+        "title" => "Cerca nel sito",
+        "link" => "index.php?page=cerca",
+        "class" => "searchLink",
+        "accessLevel" => AccesManager::ACCESS_PUBLIC
+    ),
+    Array(
+        "title" => "Chi Siamo",
+        "link" => "index.php?page=chisiamo",
+        "class" => "weLink",
+        "accessLevel" => AccesManager::ACCESS_PUBLIC
+    ),
+    Array(
+        "title" => "Registrati",
+        "link" => "index.php?page=registrati",
+        "class" => "registerLink",
+        "accessLevel" => AccesManager::ACCESS_GUEST
+    ),
+);
+
 $tecnoShopManager = new TecnoShopManager();
 $tecnoShopManager->setActive();
 $inputManager = $tecnoShopManager->getInputManager();
@@ -125,6 +146,13 @@ for ($i = 0; $i < count($additionalMenu); $i++) {
         $page->getSidebarLeft()->getAdditionalMenu()->addElement($additionalMenu[$i]["title"], $additionalMenu[$i]["link"], $additionalMenu[$i]["class"]);
     }
 }
+
+for ($i = 0; $i < count($startMenu); $i++) {
+    if (AccesManager::checkAccess($startMenu[$i]["accessLevel"])) {
+        $page->getSidebarLeft()->getStartMenu()->addElement($startMenu[$i]["title"], $startMenu[$i]["link"], $startMenu[$i]["class"]);
+    }
+}
+
 
 if ($user) {
     $page->getContent()->setShowLogin(FALSE);

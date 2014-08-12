@@ -17,6 +17,7 @@ class User {
     private $address;
     private $identity;
     private $credit;
+    private static $tempAttributes = Array();
 
     const IDENTITY_GUEST = "",
             IDENTITY_BUYER = "buyer",
@@ -85,6 +86,27 @@ class User {
 
     public function getCredit() {
         return $this->credit;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function setAddress($address) {
+        $this->address = $address;
+    }
+
+    public static function setTempAttributes($tempAttributes) {
+        self::$tempAttributes = $tempAttributes;
+    }
+
+    public static function fillInArray() {
+        if (count(User::$tempAttributes) == 0) {
+            User::$tempAttributes[User::EMAIL] = ModelDb::$mapperDb["usersTable"]["email"];
+            User::$tempAttributes[User::NAME] = ModelDb::$mapperDb["usersTable"]["name"];
+            User::$tempAttributes[User::SURNAME] = ModelDb::$mapperDb["usersTable"]["surname"];
+            User::$tempAttributes[User::ADDRESS] = ModelDb::$mapperDb["usersTable"]["address"];
+        }
     }
 
     public static function login($email, $password) {
@@ -156,7 +178,6 @@ class User {
                 . "$address', '"
                 . "$identity', '"
                 . "0.0');";
-
         if ($db->getRowsAfterQuery($query) == 1) {
             return TRUE;
         } else {
@@ -165,7 +186,6 @@ class User {
     }
 
     public static function updateUser($idUser, $arrayChange) {
-
         $db = TecnoShop::getDatabase();
         if ($db == NULL) {
             return NULL;
@@ -175,7 +195,58 @@ class User {
         foreach ($arrayChange as $key => $value) {
             $arrayChange[$key] = $db->getDatabase()->escape_string($value);
         }
-        // punto in cui andremo a fare l'update vero e proprio dei campi che sono stati modificati
+
+        $query = "UPDATE $table SET ";
+        User::fillInArray();
+        $i = 0;
+        foreach ($arrayChange as $key => $value) {
+            if (($i++) != 0) {
+                $query .= ", ";
+            }
+            $query .= "`" . User::$tempAttributes[$key] . "`='$value'";
+        }
+        $query .= "WHERE $table. `" . ModelDb::$mapperDb["usersTable"]["id"] . "`='$idUser';";
+
+        if ($db->getRowsAfterQuery($query) == 1) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public static function updateCredit($idUser, $import) {
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+        $table = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["usersTable"] . "`";
+        $idUser = $db->getDatabase()->escape_string($idUser);
+        $import = $db->getDatabase()->escape_string($import);
+        $query = "UPDATE $table SET `" . ModelDb::$mapperDb["usersTable"]["credit"] . "`='$import' WHERE `" . ModelDb::$mapperDb["usersTable"]["id"] . "`='$idUser';";
+        if ($db->getRowsAfterQuery($query) == 1) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public static function realUpdateCredit($idUser, $import) {
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+        //inizio della transazione
+        $db->startTransaction();
+        //se il metodo updateCredit retituisce TRUE (andato a buon fine) rochiamo il metodo commit
+        if (User::updateCredit($idUser, $import)) {
+            $db->commit();
+            return TRUE;
+        }
+        //altrimenti richiamo il metodo rollback per ripristinare il database allo stato precedente
+        else {
+            $db->rollback();
+            return FALSE;
+        }
     }
 
 }

@@ -10,30 +10,22 @@ $user= TecnoShopManager::getInstance()->getAccessManager()->getUser();
     <form class="" action="index.php?page=profile&action=changeData" method="post">
         <div>
             <label for="email">email</label>
-            <input class="inReg" type="text" name="email" placeholder="<?php echo $user->getEmail();?>" value="">
+            <input class="inReg" type="text" name="email" value="<?php echo $user->getEmail();?>">
         </div>
         <br/>
         <div>
-            <label for="text">nome</label>
-            <input class="inReg" type="text" name="name" placeholder="<?php echo $user->getName();?>" value="">
+            <label for="name">nome</label>
+            <input class="inReg" type="text" name="name" value="<?php echo $user->getName();?>">
         </div>
         <br/>
         <div>
-            <label for="text">cognome</label>
-            <input class="inReg" type="text" name="surname" placeholder="<?php echo $user->getSurname();?>" value="">
+            <label for="surname">cognome</label>
+            <input class="inReg" type="text" name="surname" value="<?php echo $user->getSurname();?>">
         </div>
         <br/>
         <div>
-            <label for="text">tipologia utente</label>
-            <select class="inReg" name="identity">
-                <option value="<?php echo User::IDENTITY_BUYER?>" selected="selected">Compratore</option>
-                <option value="<?php echo User::IDENTITY_SELLER?>">Venditore</option>
-            </select>           
-        </div>    
-        <br/>
-        <div>
-            <label for="text">indirizzo</label>
-            <input class="inReg" type="text" name="address" placeholder="<?php echo $user->getAddress();?>" value="">
+            <label for="address">indirizzo</label>
+            <input class="inReg" type="text" name="address" value="<?php echo $user->getAddress();?>">
         </div>
         <br/>
         <button class="inReg" type="submit" name="action" value="changeData">Conferma modifiche</button>

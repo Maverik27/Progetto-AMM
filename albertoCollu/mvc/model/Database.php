@@ -44,7 +44,21 @@ class Database {
 
     public function getRowsAfterQuery($query) {
         $this->database->query($query);
-        return $this->database->affected_rows; 
+        return $this->database->affected_rows;
+    }
+
+    public function startTransaction() {
+        $this->database->autocommit(FALSE);
+    }
+
+    public function commit() {
+        $this->database->commit();
+        $this->database->autocommit(TRUE);
+    }
+
+    public function rollback() {
+        $this->database->rollback();
+        $this->database->autocommit(TRUE);
     }
 
 }
