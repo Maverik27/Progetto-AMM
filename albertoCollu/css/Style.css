@@ -19,9 +19,9 @@
     border-radius: 3px;
     text-align: center;
     padding-bottom: 25px;
-    background-color: #999999;
-    //background-color: #98B3B8;
+    background-color: #17769C;
     height: 80px;
+    //border: 1px navy solid;
 }
 
 #sidebar{
@@ -46,8 +46,7 @@
 
 #footer{ 
     position: relative;
-    background-color: #999999;
-    //background-color: #98B3B8;
+    background-color: #17769C;
     height: 60px;
     padding-top: 20px;
     bottom: 827px;
@@ -66,7 +65,7 @@
     border-radius: 2px;
     text-align: center;
     padding: 10px;
-    height: 741px;
+    height: 752px;
     //border: 1px navy solid;  
 }
 
@@ -114,20 +113,21 @@
 .logoutbutton{
     margin-left: 640px;
     position: relative;
-    bottom: 34px;
+    bottom: 40px;
 }
 
 .loginbutton{
     margin-left: 635px;
     position: relative;
-    bottom: 34px;
+    bottom: 38px;
 }
 
 .barra{
     position: relative;
-    bottom: 14px;
-    background-color: #d9d9d9;
-    border-radius: 2px;
+    top: 2px;
+    background-color: whitesmoke;
+    border: 2px #17769C solid;
+    border-radius: 10px;
     height: 31px;
     //border: 1px navy solid;
 }
@@ -136,7 +136,7 @@
     text-align: left;
     padding-left: 10px;
     position: relative;
-    top: 6px;
+    bottom: 6px;
     //border: 1px navy solid;
 }
 
@@ -173,9 +173,6 @@
     width: 400px;
 }
 
-/*::-webkit-input-placeholder{
-    color: black;
-}*/
 .titleReg{
     //border: 1px navy solid;
     text-align: center;
@@ -184,6 +181,11 @@
 .inReg{
     //border: 1px navy solid;
     border-radius: 5px;
+    position: relative;
+    float: right;
+}
+
+inRegRic{
     position: relative;
     float: right;
 }
@@ -219,6 +221,37 @@
     list-style-image: url(img/edit.png);
 }
 
+.titleProfile{
+    list-style-image: url(img/conf.png);
+}
+
+.changeData{
+    position: relative;
+    background-color: whitesmoke;
+    border: 2px #17769C solid;
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+    top: 50px;
+    left: 120px;
+}
+
+.updateCredit{
+    position: relative;
+    background-color: whitesmoke;
+    border: 2px #17769C solid;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    top: 200px;
+    left: 160px;
+}
+
+.linkAdd{
+    position: relative;
+    bottom: 10px;
+}
+
 .chargeCredit{
     list-style-image: url(img/wallet.png);
 }
@@ -233,9 +266,4 @@
 
 .registerLink{
     list-style-image: url(img/registrati.png);
-}
-
-.linkAdd{
-    position: relative;
-    bottom: 10px;
 }

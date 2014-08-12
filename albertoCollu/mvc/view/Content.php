@@ -37,7 +37,7 @@ class Content {
     }
 
     public function showLogout() {
-        $html = "<p class=\"barText\">Benvenuto <a style=\"text-decoration: none;\" href=\"index.php?page=profile\">" . $this->user->getName() . "!</a>";
+        $html = "<p class=\"barText\">Benvenuto <a href=\"index.php?page=profile\">" . $this->user->getName() . "!</a>";
         $html .= "<form action=\"index.php?\" method=\"post\">\n";
         $html .= "<input type=\"hidden\" name=\"action\" value=\"logout\"/>";
         $html .= "<button class=\"logoutbutton\" type=\"submit\">Logout</button>";

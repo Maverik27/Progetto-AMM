@@ -24,7 +24,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
     <li>Sito Internet: www.TecnoShop.it</li>
     <li>Società: TecnoShop EU Sarl</li>
     <li>Inizio attività: 01/01/2014 </li>
-    <li>Servizio clienti: Consultate la pagina di aiuto <a href="index.php?page=contattaci">Contattaci</a>.</li>
+    <li>Servizio clienti: Consultate la pagina <a href="index.php?page=contattaci">Contattaci</a></li>
     <li>Ragione sociale: TecnoShop s.p.a.</li>
     <li>Numero di registro: B-118438</li>
     <li>5 Via Po, L-28 Milano</li>

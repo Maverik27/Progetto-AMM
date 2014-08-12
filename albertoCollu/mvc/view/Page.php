@@ -39,6 +39,7 @@ class Page {
         $html.= $this->head;
         $html.= "<body>\n";
         $html.= "<div class=\"page\">";
+        $html.= "<FONT FACE=\"Lucida Sans Unicode\" SIZE=\"2\">";
         $html.= $this->header;
         $html.= $this->sidebarLeft;
         $html.= $this->content->contentTop();
@@ -48,6 +49,7 @@ class Page {
     public function pageBottom() {
         $html = $this->content->contentBottom();
         $html.= $this->footer;
+        $html.= "</FONT>";
         $html.= "</div>\n</body>\n";
         $html.= "</html>\n";
         return $html;
