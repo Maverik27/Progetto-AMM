@@ -157,53 +157,59 @@ if ($user) {
 echo $page->pageTop();
 
 switch ($inputManager->getInput("page")) {
+    //COMMONS
     case "login":
-        include 'commons/login.php';
+        include 'mvc/view/commons/login.php';
         break;
     case "registrati":
-        include 'commons/registrati.php';
+        include 'mvc/view/commons/registrati.php';
         break;
     case "chisiamo":
-        include 'commons/chisiamo.php';
-        break;
-    case "desktop":
-        include 'commons/desktop.php';
-        break;
-    case "portatili":
-        include 'commons/portatili.php';
-        break;
-    case "accessori":
-        include 'commons/accessori.php';
-        break;
-    //SOLOGUEST
-    case "desktopGuest":
-        include 'commons/desktopGuest.php';
-        break;
-    case "portatiliGuest":
-        include 'commons/portatiliGuest.php';
-        break;
-    case "accessoriGuest":
-        include 'commons/accessoriGuest.php';
-        break;
-    //FINE GUEST
-    case "ricarica":
-        include 'commons/ricarica.php';
+        include 'mvc/view/commons/chisiamo.php';
         break;
     case "profile":
-        include 'commons/profile.php';
-        break;
-    case "vetrina":
-        include 'commons/vetrina.php';
-        break;
-    case "nuovoProdotto":
-        include 'commons/nuovoProdotto.php';
+        include 'mvc/view/commons/profile.php';
         break;
     case "cerca":
-        include 'commons/cerca.php';
+        include 'mvc/view/commons/cerca.php';
         break;
     case "contattaci":
-        include 'commons/contattaci.php';
+        include 'mvc/view/commons/contattaci.php';
         break;
+    //FINE COMMONS
+    //BUYER
+    case "desktop":
+        include 'mvc/view/buyer/desktop.php';
+        break;
+    case "portatili":
+        include 'mvc/view/buyer/portatili.php';
+        break;
+    case "accessori":
+        include 'mvc/view/buyer/accessori.php';
+        break;
+    case "ricarica":
+        include 'mvc/view/buyer/ricarica.php';
+        break;
+    //FINE BUYER
+    //SOLOGUEST
+    case "desktopGuest":
+        include 'mvc/view/guest/desktopGuest.php';
+        break;
+    case "portatiliGuest":
+        include 'mvc/view/guest/portatiliGuest.php';
+        break;
+    case "accessoriGuest":
+        include 'mvc/view/guest/accessoriGuest.php';
+        break;
+    //FINE GUEST
+    //SELLER
+    case "vetrina":
+        include 'mvc/view/seller/vetrina.php';
+        break;
+    case "nuovoProdotto":
+        include 'mvc/view/seller/nuovoProdotto.php';
+        break;
+    //FINE SELLER
     default :
         include 'welcome.php';
         break;
