@@ -16,7 +16,7 @@
 require_once 'mvc/controller/TecnoShopManager.php';
 TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
 ?>
-<form id="BarraRicerca">       
+<form id="BarraRicerca">
     <input class="cerca" type="text" placeholder="Cerca nel Sito">
     <button class="cerc" type="submit">Cerca</button>
 </form> 

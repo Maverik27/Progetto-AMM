@@ -110,6 +110,11 @@
     //border: 1px navy solid;
 }
 
+.logIn{
+    position: relative;
+    top: 10px;
+}
+
 .logoutbutton{
     margin-left: 640px;
     position: relative;
@@ -143,7 +148,13 @@
 .cerca{
     border-radius: 1px;
     position: relative;
+    width: 400px;
     //border: 1px navy solid;
+}
+
+#BarraRicerca{
+ position: relative;
+ top: 10px;
 }
 
 .registration{
@@ -170,7 +181,7 @@
     top: 50px;
     text-align: left;
     display: inline-block;
-    width: 400px;
+    width: 256px;
 }
 
 .titleReg{
@@ -183,6 +194,25 @@
     border-radius: 5px;
     position: relative;
     float: right;
+}
+
+.addNew{
+    position: relative;
+    text-align: right;
+    display: inline-block;
+    width: 650px;
+    //border: 1px navy solid;
+}
+
+.selectNew{
+    width: 200px;
+    border-radius: 5px;
+}
+
+.labelNew{
+    border-radius: 5px;
+    position: relative;
+    float: left;
 }
 
 inRegRic{

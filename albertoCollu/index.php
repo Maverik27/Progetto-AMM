@@ -43,9 +43,9 @@ $menu = Array(
         "accessLevel" => AccesManager::ACCESS_NOSELLER
     ),
     Array(
-        "title" => "Accessori",
-        "link" => "index.php?page=accessori",
-        "img" => "css/img/Accessori.png",
+        "title" => "Tablet",
+        "link" => "index.php?page=tablet",
+        "img" => "css/img/Tablet.png",
         "accessLevel" => AccesManager::ACCESS_NOSELLER
     ),
     Array(
@@ -74,9 +74,9 @@ $menu = Array(
         "accessLevel" => AccesManager::ACCESS_GUEST
     ),
     Array(
-        "title" => "Accessori",
-        "link" => "index.php?page=accessoriGuest",
-        "img" => "css/img/Accessori.png",
+        "title" => "Tablet",
+        "link" => "index.php?page=tabletGuest",
+        "img" => "css/img/Tablet.png",
         "accessLevel" => AccesManager::ACCESS_GUEST
     ),
 );
@@ -212,8 +212,8 @@ switch ($inputManager->getInput("page")) {
     case "portatili":
         include 'mvc/view/buyer/portatili.php';
         break;
-    case "accessori":
-        include 'mvc/view/buyer/accessori.php';
+    case "tablet":
+        include 'mvc/view/buyer/tablet.php';
         break;
     case "ricarica":
         include 'mvc/view/buyer/ricarica.php';
@@ -226,8 +226,8 @@ switch ($inputManager->getInput("page")) {
     case "portatiliGuest":
         include 'mvc/view/guest/portatiliGuest.php';
         break;
-    case "accessoriGuest":
-        include 'mvc/view/guest/accessoriGuest.php';
+    case "tabletGuest":
+        include 'mvc/view/guest/tabletGuest.php';
         break;
     //FINE GUEST
     //SELLER

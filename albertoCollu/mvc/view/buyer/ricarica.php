@@ -9,14 +9,15 @@ $total = TecnoShopManager::getInstance()->getAccessManager()->getUser()->getCred
 <div class="titleReg"><h1>Ricarica Credito</h1></div>
 
 <div class="credit">
-    <div><h3>Il tuo credito è <?php echo $total; ?> &euro;</h3></div>
     <form class="" action="index.php?page=ricarica&action=addCredit" method="post">
-        <div>
-            <label for="credit"></label>
-            <input class="inRegRic" type="text" name="credit" placeholder="inserisci credito" value="">
-        </div>
-        <br/>
-        <button class="inRegRic" type="submit" name="action" value="addCredit">Ricarica</button>
+        <fieldset><legend><h3>Il tuo credito è <?php echo $total; ?> &euro;</h3></legend>
+            <br/>
+            <div>
+                <label for="credit"></label>
+                <input class="inRegRic" type="text" name="credit" placeholder="inserisci credito" value="">
+                <button class="inRegRic" type="submit" name="action" value="addCredit">Ricarica</button>
+            </div>
+        </fieldset>
     </form>
 </div>
 

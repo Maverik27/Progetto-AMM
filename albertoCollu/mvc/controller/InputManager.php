@@ -19,7 +19,7 @@ class InputManager {
         "chisiamo",
         "login",
         "desktop",
-        "accessori",
+        "tablet",
         "portatili",
         "cerca",
         "profile",
@@ -28,7 +28,7 @@ class InputManager {
         "nuovoProdotto",
         "contattaci",
         "desktopGuest",
-        "accessoriGuest",
+        "tabletGuest",
         "portatiliGuest",
     );
     public $setActions = array(
