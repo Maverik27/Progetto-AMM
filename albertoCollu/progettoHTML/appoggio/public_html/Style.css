@@ -46,7 +46,7 @@ h1{
     padding-top: 2px;
     position: relative;
     height: 829px;
-    //border: 1px navy solid;
+    border: 1px navy solid;
     //border-radius: 5px;
     margin-left: 190px;
     bottom: 847px;
@@ -68,7 +68,7 @@ h1{
 .content{
     padding: 10px;
     border-radius: 5px;
-    //border: 1px navy solid;
+    border: 1px navy solid;
     height: 759px;
     background-color: #d9d9d9;
 }
@@ -120,3 +120,62 @@ form#BarraRicerca{
 }
 
 
+/*da qui in giù*/
+
+.vetrina{
+    text-align: center;
+    //border: 1px navy solid;
+} 
+
+.template{
+    //border: 1px navy solid;
+    margin-left: 37px;
+    margin-right: 37px;
+    padding: 2px;
+    height: 260px;
+    width: 600px;
+    background-color: whitesmoke;
+    border: 2px #17769C solid;
+    border-radius: 10px;
+}
+
+.photo{
+    position: relative;
+    left: 370px;
+    bottom: 235px;
+    //border: 1px navy solid;
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.info{
+    //border: 1px navy solid;
+    padding: 2px;
+    width: 300px;
+    height: 244px;
+    position: relative;
+    left: 20px;
+}
+
+.price{
+    //border: 1px navy solid;
+    padding: 2px;
+    width: 100px;
+    height: 20px;
+    position: relative;
+    left: 410px;
+    bottom: 215px;
+    border: 2px #17769C solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.riepilogo{
+    list-style: none;
+    position: relative;
+    border: 2px #17769C solid;
+    border-radius: 10px;
+    height: 25px;
+    text-align: center;
+}

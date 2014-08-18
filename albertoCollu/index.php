@@ -45,7 +45,7 @@ $menu = Array(
     Array(
         "title" => "Tablet",
         "link" => "index.php?page=tablet",
-        "img" => "css/img/Tablet.png",
+        "img" => "css/img/tablet.png",
         "accessLevel" => AccesManager::ACCESS_NOSELLER
     ),
     Array(
@@ -55,7 +55,7 @@ $menu = Array(
         "accessLevel" => AccesManager::ACCESS_NOBUYER
     ),
     Array(
-        "title" => "Vetrina Prodotti",
+        "title" => "Magazzino Prodotti",
         "link" => "index.php?page=vetrina",
         "img" => "css/img/vetrina.png",
         "accessLevel" => AccesManager::ACCESS_NOBUYER
@@ -76,7 +76,7 @@ $menu = Array(
     Array(
         "title" => "Tablet",
         "link" => "index.php?page=tabletGuest",
-        "img" => "css/img/Tablet.png",
+        "img" => "css/img/tablet.png",
         "accessLevel" => AccesManager::ACCESS_GUEST
     ),
 );
