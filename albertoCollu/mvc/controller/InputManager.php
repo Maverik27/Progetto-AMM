@@ -37,6 +37,7 @@ class InputManager {
         "register",
         "changeData",
         "addCredit",
+        "addNew",
     );
     public $validIdentity = array(
         User::IDENTITY_BUYER,

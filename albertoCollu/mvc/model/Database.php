@@ -42,6 +42,17 @@ class Database {
         return $tableTemp;
     }
 
+    public function getIdQuery($query) {
+        $resultArray = $this->query($query);
+        //la query è diventata un array associativo
+        if (count($resultArray) > 0) {
+            $keys = array_keys($resultArray[0]);
+            return $resultArray[0][$keys[0]];
+        } else {
+            return FALSE;
+        }
+    }
+
     public function getRowsAfterQuery($query) {
         $this->database->query($query);
         return $this->database->affected_rows;

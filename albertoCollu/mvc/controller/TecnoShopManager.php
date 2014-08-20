@@ -4,6 +4,7 @@ require_once 'InputManager.php';
 require_once (__DIR__) . "/../model/TecnoShop.php";
 require_once 'AccesManager.php';
 require_once 'UserManager.php';
+require_once 'DepotManager.php';
 
 /**
  * Description of TecnoShopManager
@@ -18,6 +19,7 @@ class TecnoShopManager {
     private $tecnoShop;
     private $accessManager;
     private $userManager;
+    private $depotManager;
 
     public function __construct() {
         TecnoShopManager::$instance = $this;
@@ -28,6 +30,7 @@ class TecnoShopManager {
         $this->inputManager = new InputManager();
         $this->accessManager = new AccesManager();
         $this->userManager = new UserManager($this->accessManager->getUser());
+        $this->depotManager = new DepotManager($this->accessManager->getUser());
         $this->manageInput();
     }
 
@@ -110,12 +113,7 @@ class TecnoShopManager {
                 $this->inputManager->addInputToArray("address", $_POST);
                 if ($this->inputManager->getInput("password") == $this->inputManager->getInput("repeatPassword")) {
                     $this->accessManager->register(
-                            $this->inputManager->getInput("email"), 
-                            $this->inputManager->getInput("password"), 
-                            $this->inputManager->getInput("name"), 
-                            $this->inputManager->getInput("surname"), 
-                            $this->inputManager->getInput("identity"), 
-                            $this->inputManager->getInput("address")
+                            $this->inputManager->getInput("email"), $this->inputManager->getInput("password"), $this->inputManager->getInput("name"), $this->inputManager->getInput("surname"), $this->inputManager->getInput("identity"), $this->inputManager->getInput("address")
                     );
                 }
                 break;
@@ -140,10 +138,46 @@ class TecnoShopManager {
             case "addCredit":
                 $this->inputManager->addInputToArray("credit", $_POST);
                 $creditUpdated = $this->accessManager->getUser()->getCredit() + $this->inputManager->getInput("credit");
-                if($this->userManager->realUpdateCredit($creditUpdated)){
+                if ($this->userManager->realUpdateCredit($creditUpdated)) {
                     $this->accessManager->getUser()->setCredit($creditUpdated);
                 }
                 break;
+            case "addNew":
+                $this->inputManager->addInputToArray("type", $_POST);
+                $this->inputManager->addInputToArray("brand", $_POST);
+                $this->inputManager->addInputToArray("model", $_POST);
+                $this->inputManager->addInputToArray("inces", $_POST);
+                $this->inputManager->addInputToArray("os", $_POST);
+                $this->inputManager->addInputToArray("cpu", $_POST);
+                $this->inputManager->addInputToArray("ram", $_POST);
+                $this->inputManager->addInputToArray("storage", $_POST);
+                $this->inputManager->addInputToArray("gpu", $_POST);
+                $this->inputManager->addInputToArray("nitems", $_POST);
+                $this->inputManager->addInputToArray("price", $_POST);
+                $this->inputManager->addInputToArray("description", $_POST);
+                $computer = new Computer();
+                $computer->setType($this->inputManager->getInput("type"));
+                $computer->setBrand($this->inputManager->getInput("brand"));
+                $computer->setModel($this->inputManager->getInput("model"));
+                $computer->setInces($this->inputManager->getInput("inces"));
+                $computer->setOs($this->inputManager->getInput("os"));
+                $computer->setCpu($this->inputManager->getInput("cpu"));
+                $computer->setRam($this->inputManager->getInput("ram"));
+                $computer->setStorage($this->inputManager->getInput("storage"));
+                $computer->setGpu($this->inputManager->getInput("gpu"));
+                $computer->setDescription($this->inputManager->getInput("description"));
+                if(AccesManager::checkAccess(AccesManager::ACCESS_NOBUYER)){
+                    $computer->setId($this->depotManager->addComputer($computer));
+                    if($computer->getId() > 0){
+                        $depot = new Depot();
+                        $depot->setSeller(new User());
+                        $depot->getSeller()->setId($this->accessManager->getUser()->getId());
+                        $depot->setComputer($computer->getId());
+                        $depot->setNItems($this->inputManager->getInput("nitems"));
+                        $depot->setPrice($this->inputManager->getInput("price"));
+                        $this->depotManager->confirmToSell($depot);
+                    }
+                }
             default :
                 break;
         }

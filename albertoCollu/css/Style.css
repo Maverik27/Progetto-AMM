@@ -56,7 +56,7 @@
     //border: 1px navy solid;
 }
 
-.info{
+.infotter{
     position: relative;
     //border: 1px navy solid;    
 }
@@ -304,6 +304,7 @@ inRegRic{
 .vetrina{
     text-align: center;
     //border: 1px navy solid;
+    padding-left: 35px; 
 } 
 
 .template{
@@ -311,8 +312,8 @@ inRegRic{
     margin-left: 37px;
     margin-right: 37px;
     padding: 2px;
-    height: 260px;
-    width: 600px;
+    height: 190px;
+    width: 540px;
     background-color: whitesmoke;
     border: 2px #17769C solid;
     border-radius: 10px;
@@ -321,22 +322,32 @@ inRegRic{
 .photo{
     position: relative;
     left: 370px;
-    bottom: 235px;
+    bottom: 180px;
     //border: 1px navy solid;
-    width: 180px;
-    height: 180px;
+    width: 128px;
+    height: 128px;
     border-radius: 10px;
 }
 
-.info{
+.info1{
     //border: 1px navy solid;
     padding: 2px;
-    width: 300px;
-    height: 244px;
+    width: 250px;
+    height: 185px;
     position: relative;
     left: 20px;
-    top: 15px;
 }
+
+.info2{
+    //border: 1px navy solid;
+    padding: 2px;
+    width: 250px;
+    height: 185px;
+    position: relative;
+    left: 20px;
+    top: 150px;
+}
+
 
 .price{
     //border: 1px navy solid;
@@ -344,8 +355,8 @@ inRegRic{
     width: 100px;
     height: 20px;
     position: relative;
-    left: 410px;
-    bottom: 215px;
+    left: 380px;
+    bottom: 175px;
     border: 2px #17769C solid;
     border-radius: 10px;
     text-align: center;
@@ -356,13 +367,8 @@ inRegRic{
     position: relative;
     border: 2px #17769C solid;
     border-radius: 10px;
-    height: 25px;
+    height: 15px;
     text-align: center;
+    //border: 1px navy solid;
 }
-
-.tx{
-    position: relative;
-    top: 5px;
-}
-
 /*fine vetrina*/
