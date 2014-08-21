@@ -26,15 +26,18 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                 </select>           
             </div>
             <br/>
+            <br/>
             <div>
                 <label class="labelNew" for="brand">Marca</label>
                 <input class="selectNew" type="text" name="brand" placeholder="Marca" value="">
             </div>
             <br/>
+            <br/>
             <div>
                 <label class="labelNew" for="model">Modello</label>
                 <input class="selectNew" type="text" name="model" placeholder="Modello" value="">
             </div>
+            <br/>
             <br/>
             <div>
                 <label class="labelNew" for="inces">Display</label>
@@ -51,6 +54,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                 </select>           
             </div>
             <br/>
+            <br/>
             <div>
                 <label class="labelNew" for="os">Sistema Operativo</label>
                 <select class="selectNew" name="os">
@@ -65,6 +69,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     ?>
                 </select>           
             </div>
+            <br/>
             <br/>
             <div>
                 <label class="labelNew" for="cpu">Processore</label>
@@ -81,6 +86,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                 </select>           
             </div>
             <br/>
+            <br/>
             <div>
                 <label class="labelNew" for="ram">Memoria Ram</label>
                 <select class="selectNew" name="ram">
@@ -95,6 +101,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     ?>
                 </select>           
             </div>
+            <br/>
             <br/>
             <div>
                 <label class="labelNew" for="storage">Archiviazione</label>
@@ -111,6 +118,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                 </select>           
             </div>
             <br/>
+            <br/>
             <div>
                 <label class="labelNew" for="gpu">Scheda Video</label>
                 <select class="selectNew" name="gpu">
@@ -126,10 +134,12 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                 </select>           
             </div>
             <br/>
+            <br/>
             <div>
                 <label class="labelNew" for="nitems">Pezzi in magazzino</label>
                 <input class="selectNew" type="text" name="nitems" placeholder="numero pezzi" value="">
             </div>
+            <br/>
             <br/>
             <div>
                 <label class="labelNew" for="price">Prezzo</label>
@@ -140,7 +150,8 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
             <div>
                 <textarea name="testo" rows="8" cols="74">Descrizione prodotto..</textarea>
             </div>
-            <button class="selectNew" type="submit" name="action" value="addNew">Aggiungi Prodotto</button>
+            <br/>
+            <button class="selectNewButton" type="submit" name="action" value="addNew">Aggiungi Prodotto</button>
         </fieldset>
     </form>
 </div>

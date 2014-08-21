@@ -64,7 +64,9 @@ if (!$isRegistered) {
             </fieldset>
         </form>
     </div>
-<?php
+    <?php
 } else {
-    echo "<p>Grazie per esserti registrato</p>";
+    echo "<div class=\"updateCredit\">"
+    . "<li class=\"titleProfile\"><a class=\"linkAdd\" style=\"text-decoration: none\">Grazie per esserti registrato!</a></li>"
+    . "</div>";
 }?>

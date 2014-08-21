@@ -46,12 +46,4 @@ class StartMenu {
         $html .= "</div>\n";
         return $html;
     }
-
-//            $html .= "<div class=\"linkSideBar\">\n";
-//        $html .= "<ul>";
-//        $html .= "<li style=\"list-style-image: url(css/img/cerca.png);\"> <a class=\"linkAdd\" style=\"text-decoration: none;\" href=\"index.php?page=cerca\">Cerca nel Sito</a></li>";
-//        $html .= "<li style=\"list-style-image: url(css/img/chisiamo.png);\"> <a class=\"linkAdd\" style=\"text-decoration: none;\" href=\"index.php?page=chisiamo\">Chi siamo</a></li>";
-//        $html .= "<li style=\"list-style-image: url(css/img/registrati.png);\"> <a class=\"linkAdd\" style=\"text-decoration: none;\" href=\"index.php?page=registrati\">Registrati</a></li>";
-//        $html .= "</ul>";
-//        $html .= "</div>\n";
 }

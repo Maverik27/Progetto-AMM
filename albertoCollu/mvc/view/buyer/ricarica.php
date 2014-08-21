@@ -15,7 +15,7 @@ $total = TecnoShopManager::getInstance()->getAccessManager()->getUser()->getCred
             <div>
                 <label for="credit"></label>
                 <input class="inRegRic" type="text" name="credit" placeholder="inserisci credito" value="">
-                <button class="inRegRic" type="submit" name="action" value="addCredit">Ricarica</button>
+                <button class="inRegRica" type="submit" name="action" value="addCredit">Ricarica</button>
             </div>
         </fieldset>
     </form>

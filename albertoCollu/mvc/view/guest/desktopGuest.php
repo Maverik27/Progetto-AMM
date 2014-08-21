@@ -1,8 +1,9 @@
 <?php
 require_once 'mvc/controller/TecnoShopManager.php';
+require_once 'mvc/view/commons/viewerMagazineProducts.php';
 TecnoShopManager::protect(AccesManager::ACCESS_GUEST);
-?>
 
-<h2>
-    PAGINA DESKTOP GUEST
-</h2>
+for ($i = 0; $i < 4; $i++) {
+    echo viewerMagazineProducts::viewerProductsToBy();
+}
+?>
