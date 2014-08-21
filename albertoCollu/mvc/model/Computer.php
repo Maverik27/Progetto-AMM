@@ -24,9 +24,10 @@ class Computer {
     private $storage;
     private $gpu;
     private $description;
+    private $allDepots;
     public static $arrayType = array(
         "Desktop",
-        "Netbook",
+        "Notebook",
         "Tablet"
     );
     public static $arrayInces = array(
@@ -44,8 +45,8 @@ class Computer {
         "DDR3 16GB 1600MHz",
     );
     public static $arrayOs = array(
-        "Linux Mint 17 x86",
-        "Linux Mint 17 x64",
+        "Linux mint 17 x86",
+        "Linux mint 17 x64",
         "Windows 7 x86",
         "Windows 7 x64",
         "Windows 8.1 x64",
@@ -73,7 +74,11 @@ class Computer {
     );
 
     public function __construct() {
-        
+        $this->allDepots = array();
+    }
+
+    public function getAllDepots() {
+        return $this->allDepots;
     }
 
     public function getId() {
@@ -164,21 +169,26 @@ class Computer {
         $this->inces = $inces;
     }
 
+    public function addDepotSeller($depot) {
+        array_push($this->allDepots, $depot);
+    }
+
     public static function addComputer($computer) {
         $db = TecnoShop::getDatabase();
         if ($db == NULL) {
             return NULL;
         }
-        $computer->setType($db->escape_string($computer->getType()));
-        $computer->setBrand($db->escape_string($computer->getBrand()));
-        $computer->setModel($db->escape_string($computer->getModel()));
-        $computer->setInces($db->escape_string($computer->getInces()));
-        $computer->setRam($db->escape_string($computer->getRam()));
-        $computer->setOs($db->escape_string($computer->getOs()));
-        $computer->setCpu($db->escape_string($computer->getCpu()));
-        $computer->setStorage($db->escape_string($computer->getStorage()));
-        $computer->setGpu($db->escape_string($computer->getGpu()));
-        $computer->setDescription($db->escape_string($computer->getDescription()));
+
+        $computer->setType($db->getDatabase()->escape_string($computer->getType()));
+        $computer->setBrand($db->getDatabase()->escape_string($computer->getBrand()));
+        $computer->setModel($db->getDatabase()->escape_string($computer->getModel()));
+        $computer->setInces($db->getDatabase()->escape_string($computer->getInces()));
+        $computer->setRam($db->getDatabase()->escape_string($computer->getRam()));
+        $computer->setOs($db->getDatabase()->escape_string($computer->getOs()));
+        $computer->setCpu($db->getDatabase()->escape_string($computer->getCpu()));
+        $computer->setStorage($db->getDatabase()->escape_string($computer->getStorage()));
+        $computer->setGpu($db->getDatabase()->escape_string($computer->getGpu()));
+        $computer->setDescription($db->getDatabase()->escape_string($computer->getDescription()));
 
         $query = "INSERT INTO `" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["computersTable"] . "` (`"
                 . ModelDb::$mapperDb["computersTable"]["id"] . "`, `"
@@ -202,7 +212,7 @@ class Computer {
                 . $computer->getCpu() . "', '"
                 . $computer->getStorage() . "', '"
                 . $computer->getGpu() . "', '"
-                . $computer->getDescription() . "' );";
+                . $computer->getDescription() . "');";
 
         //il metodo add computer ggiunge un computer alla tabella computer e 
         //restituisce l'id del computer appena inserito (uno e uno solo)
@@ -211,10 +221,10 @@ class Computer {
                     . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["computersTable"] . "` WHERE `"
                     . ModelDb::$mapperDb["computersTable"]["type"] . "`='" . $computer->getType() . "' AND `"
                     . ModelDb::$mapperDb["computersTable"]["brand"] . "`='" . $computer->getBrand() . "' AND `"
-                    . ModelDb::$mapperDb["computersTable"]["model"] . "`='" . $computer->getModel() . "' AND `"
-                    . ModelDb::$mapperDb["computersTable"]["inces"] . "`='" . $computer->getInces() . "' limit 1;";
+                    . ModelDb::$mapperDb["computersTable"]["model"] . "`='" . $computer->getModel() . "' limit 1;";
 
             $computerId = $db->getIdQuery($query);
+
             if ($computerId > 0) {
                 return $computerId;
             } else {

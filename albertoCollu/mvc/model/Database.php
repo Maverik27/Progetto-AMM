@@ -45,7 +45,7 @@ class Database {
     public function getIdQuery($query) {
         $resultArray = $this->query($query);
         //la query è diventata un array associativo
-        if (count($resultArray) > 0) {
+        if (count($resultArray)) {
             $keys = array_keys($resultArray[0]);
             return $resultArray[0][$keys[0]];
         } else {
@@ -54,7 +54,7 @@ class Database {
     }
 
     public function getRowsAfterQuery($query) {
-        $this->database->query($query);
+        $q = $this->database->query($query);
         return $this->database->affected_rows;
     }
 

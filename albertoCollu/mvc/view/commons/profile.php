@@ -16,19 +16,19 @@ if (!$isChange) {
             <form class="" action="index.php?page=profile&action=changeData" method="post">
                 <div>
                     <label for="email">email</label>
-                    <input class="inReg" type="text" name="email" value="<?php echo $user->getEmail(); ?>">
+                    <input class="inReg" type="text" required="" name="email" value="<?php echo $user->getEmail(); ?>">
                 </div>
                 <br/>
                 <br/>
                 <div>
                     <label for="name">nome</label>
-                    <input class="inReg" type="text" name="name" value="<?php echo $user->getName(); ?>">
+                    <input class="inReg" type="text" required="" name="name" value="<?php echo $user->getName(); ?>">
                 </div>
                 <br/>
                 <br/>
                 <div>
                     <label for="surname">cognome</label>
-                    <input class="inReg" type="text" name="surname" value="<?php echo $user->getSurname(); ?>">
+                    <input class="inReg" type="text" required="" name="surname" value="<?php echo $user->getSurname(); ?>">
                 </div>
                 <br/>
                 <br/>

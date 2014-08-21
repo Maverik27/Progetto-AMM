@@ -17,9 +17,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayType); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayType[$i] . '\" selected=\"selected\">' . Computer::$arrayType[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayType[$i] . '" selected="selected">' . Computer::$arrayType[$i] . '</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayType[$i] . '\">' . Computer::$arrayType[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayType[$i] . '">' . Computer::$arrayType[$i] . '</option>';
                         }
                     }
                     ?>
@@ -29,13 +29,13 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
             <br/>
             <div>
                 <label class="labelNew" for="brand">Marca</label>
-                <input class="selectNew" type="text" name="brand" placeholder="Marca" value="">
+                <input class="selectNew" type="text" required="" name="brand" placeholder="Marca" value="">
             </div>
             <br/>
             <br/>
             <div>
                 <label class="labelNew" for="model">Modello</label>
-                <input class="selectNew" type="text" name="model" placeholder="Modello" value="">
+                <input class="selectNew" type="text" required="" name="model" placeholder="Modello" value="">
             </div>
             <br/>
             <br/>
@@ -45,9 +45,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayInces); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayInces[$i] . '\" selected=\"selected\">' . Computer::$arrayInces[$i] . '"</option>';
+                            echo '<option value="' . Computer::$arrayInces[$i] . '" selected="selected">' . Computer::$arrayInces[$i] . '"</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayInces[$i] . '\">' . Computer::$arrayInces[$i] . '"</option>';
+                            echo '<option value="' . Computer::$arrayInces[$i] . '">' . Computer::$arrayInces[$i] . '"</option>';
                         }
                     }
                     ?>
@@ -61,9 +61,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayOs); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayOs[$i] . '\" selected=\"selected\">' . Computer::$arrayOs[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayOs[$i] . '" selected="selected">' . Computer::$arrayOs[$i] . '</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayOs[$i] . '\">' . Computer::$arrayOs[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayOs[$i] . '">' . Computer::$arrayOs[$i] . '</option>';
                         }
                     }
                     ?>
@@ -77,9 +77,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayCpu); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayCpu[$i] . '\" selected=\"selected\">' . Computer::$arrayCpu[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayCpu[$i] . '" selected="selected">' . Computer::$arrayCpu[$i] . '</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayCpu[$i] . '\">' . Computer::$arrayCpu[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayCpu[$i] . '">' . Computer::$arrayCpu[$i] . '</option>';
                         }
                     }
                     ?>
@@ -93,9 +93,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayRam); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayRam[$i] . '\" selected=\"selected\">' . Computer::$arrayRam[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayRam[$i] . '" selected="selected">' . Computer::$arrayRam[$i] . '</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayRam[$i] . '\">' . Computer::$arrayRam[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayRam[$i] . '">' . Computer::$arrayRam[$i] . '</option>';
                         }
                     }
                     ?>
@@ -109,9 +109,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayStorage); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayStorage[$i] . '\" selected=\"selected\">' . Computer::$arrayStorage[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayStorage[$i] . '" selected="selected">' . Computer::$arrayStorage[$i] . '</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayStorage[$i] . '\">' . Computer::$arrayStorage[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayStorage[$i] . '">' . Computer::$arrayStorage[$i] . '</option>';
                         }
                     }
                     ?>
@@ -125,9 +125,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
                     <?php
                     for ($i = 0; $i < count(Computer::$arrayGpu); $i++) {
                         if ($i == 0) {
-                            echo '<option value=\"' . Computer::$arrayGpu[$i] . '\" selected=\"selected\">' . Computer::$arrayGpu[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayGpu[$i] . '" selected="selected">' . Computer::$arrayGpu[$i] . '</option>';
                         } else {
-                            echo '<option value=\"' . Computer::$arrayGpu[$i] . '\">' . Computer::$arrayGpu[$i] . '</option>';
+                            echo '<option value="' . Computer::$arrayGpu[$i] . '">' . Computer::$arrayGpu[$i] . '</option>';
                         }
                     }
                     ?>
@@ -137,18 +137,18 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
             <br/>
             <div>
                 <label class="labelNew" for="nitems">Pezzi in magazzino</label>
-                <input class="selectNew" type="text" name="nitems" placeholder="numero pezzi" value="">
+                <input class="selectNew" type="text" required="" name="nitems" placeholder="numero pezzi" value="">
             </div>
             <br/>
             <br/>
             <div>
                 <label class="labelNew" for="price">Prezzo</label>
-                <input class="selectNew" type="text" name="price" placeholder="Prezzo" value="">
+                <input class="selectNew" type="text" required="" name="price" placeholder="Prezzo" value="">
             </div>
             <br/>
             <br/>
             <div>
-                <textarea name="testo" rows="8" cols="74">Descrizione prodotto..</textarea>
+                <textarea name="description" rows="8" cols="74">Descrizione prodotto..</textarea>
             </div>
             <br/>
             <button class="selectNewButton" type="submit" name="action" value="addNew">Aggiungi Prodotto</button>

@@ -1,6 +1,7 @@
 <?php
 
 require_once (__DIR__) . "/../model/User.php";
+require_once (__DIR__) . "/../model/Depot.php";
 require_once (__DIR__) . "/../model/Computer.php";
 
 /**
@@ -33,6 +34,13 @@ class DepotManager {
     public function confirmToSell($depot) {
         if (AccesManager::checkAccess(AccesManager::ACCESS_NOBUYER)) {
             return Depot::confirmToSell($depot);
+        }
+    }
+
+    public function getSellerView() {
+        if (AccesManager::checkAccess(AccesManager::ACCESS_NOBUYER)) {
+            /*$id_seller, $from, $to*/
+            return Depot::getSellerView($this->user->getId(), 0 , 1000);
         }
     }
 

@@ -11,20 +11,38 @@ class viewerMagazineProducts {
         
     }
 
-    public static function viewerMagazine() {
+    public static function viewerMagazine($viewSellerProducts) {
+        $var = $viewSellerProducts->getComputer();
         $html = "<br/><div class=\"vetrina\"><div class=\"template1\"><div class=\"info1\">";
         $html .= "<fieldset><legend style=\"text-align: left\">Dati Prodotto</legend>";
-        $html .= "<ul><li class=\"riepilogo\">Tablet</li>";
-        $html .= "<li class=\"riepilogo\">Samsung</li>";
-        $html .= "<li class=\"riepilogo\">Galaxy Note 10.1</li>";
-        $html .= "<li class=\"riepilogo\">10</li></ul>";
+        for($i = 0;$i < count($viewSellerProducts); $i++)
+        $html .= "<ul><li class=\"riepilogo\">Tipologia</li>";
+        $html .= "<li class=\"riepilogo\">marca</li>";
+        $html .= "<li class=\"riepilogo\">modello</li>";
+        $html .= "<li class=\"riepilogo\">" . $viewSellerProducts->getNItems() . "</li></ul>";
         $html .= "</fieldset></div>";
         $html .= "<div class=\"photo1\"><img src=\"css/img/vetrina1.png\"></div>";
-        $html .= "<div class=\"price1\">Prezzo 499</div>";
+        $html .= "<div class=\"price1\">" . $viewSellerProducts->getPrice() . "</div>";
         $html .= "</div></div>";
         return $html;
     }
 
+    
+//        public static function viewerMagazine($viewSellerProducts) {
+//        $var = $viewSellerProducts->getComputer();
+//        $html = "<br/><div class=\"vetrina\"><div class=\"template1\"><div class=\"info1\">";
+//        $html .= "<fieldset><legend style=\"text-align: left\">Dati Prodotto</legend>";
+//        $html .= "<ul><li class=\"riepilogo\">Tipologia</li>";
+//        $html .= "<li class=\"riepilogo\">marca</li>";
+//        $html .= "<li class=\"riepilogo\">" . $var->getModel() . "</li>";
+//        $html .= "<li class=\"riepilogo\">" . $viewSellerProducts->getNItems() . "</li></ul>";
+//        $html .= "</fieldset></div>";
+//        $html .= "<div class=\"photo1\"><img src=\"css/img/vetrina1.png\"></div>";
+//        $html .= "<div class=\"price1\">" . $viewSellerProducts->getPrice() . "</div>";
+//        $html .= "</div></div>";
+//        return $html;
+//    }
+    
     public static function viewerProductsToBy() {
         $html = "<br/><div class=\"vetrina\"><div class=\"template2\"><div class=\"info2\">";
         $html .= "<fieldset><legend style=\"text-align: left\">Dati Prodotto</legend>";

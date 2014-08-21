@@ -58,6 +58,10 @@ class TecnoShopManager {
         return $this->userManager;
     }
 
+    public function getDepotManager() {
+        return $this->depotManager;
+    }
+
     /*
      * STEP 6:
      * 
@@ -155,6 +159,7 @@ class TecnoShopManager {
                 $this->inputManager->addInputToArray("nitems", $_POST);
                 $this->inputManager->addInputToArray("price", $_POST);
                 $this->inputManager->addInputToArray("description", $_POST);
+                
                 $computer = new Computer();
                 $computer->setType($this->inputManager->getInput("type"));
                 $computer->setBrand($this->inputManager->getInput("brand"));
@@ -166,9 +171,10 @@ class TecnoShopManager {
                 $computer->setStorage($this->inputManager->getInput("storage"));
                 $computer->setGpu($this->inputManager->getInput("gpu"));
                 $computer->setDescription($this->inputManager->getInput("description"));
-                if(AccesManager::checkAccess(AccesManager::ACCESS_NOBUYER)){
+                
+                if (AccesManager::checkAccess(AccesManager::ACCESS_NOBUYER)) {
                     $computer->setId($this->depotManager->addComputer($computer));
-                    if($computer->getId() > 0){
+                    if ($computer->getId() > 0) {
                         $depot = new Depot();
                         $depot->setSeller(new User());
                         $depot->getSeller()->setId($this->accessManager->getUser()->getId());
@@ -178,6 +184,7 @@ class TecnoShopManager {
                         $this->depotManager->confirmToSell($depot);
                     }
                 }
+                break;
             default :
                 break;
         }

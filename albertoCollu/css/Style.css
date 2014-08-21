@@ -259,6 +259,10 @@ inRegRic{
     list-style-image: url(img/conf.png);
 }
 
+.noProducts{
+    list-style-image: url(img/notFound.png);
+}
+
 .changeData{
     position: relative;
     background-color: whitesmoke;

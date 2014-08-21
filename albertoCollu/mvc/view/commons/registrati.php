@@ -17,31 +17,31 @@ if (!$isRegistered) {
                 <br/>
                 <div>
                     <label for="email">email</label>
-                    <input class="inReg" type="text" name="email" value="">
+                    <input class="inReg" type="text" name="email" required="" value="">
                 </div>
                 <br/>
                 <br/>
                 <div>
                     <label for="password">password</label>
-                    <input class="inReg" type="password" name="password" value="">
+                    <input class="inReg" type="password" required="" name="password" value="">
                 </div>
                 <br/>
                 <br/>
                 <div>
                     <label for="password">ripeti password</label>
-                    <input class="inReg" type="password" name="repeatPassword" value="">
+                    <input class="inReg" type="password" required="" name="repeatPassword" value="">
                 </div>
                 <br/>
                 <br/>
                 <div>
                     <label for="text">nome</label>
-                    <input class="inReg" type="text" name="name" value="">
+                    <input class="inReg" type="text" required="" name="name" value="">
                 </div>
                 <br/>
                 <br/>
                 <div>
                     <label for="text">cognome</label>
-                    <input class="inReg" type="text" name="surname" value="">
+                    <input class="inReg" type="text" required="" name="surname" value="">
                 </div>
                 <br/>
                 <br/>
