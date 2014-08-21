@@ -130,12 +130,11 @@ class User {
         $data = $db->query($query);
 
         if (count($data) == 0) {
-            echo 'dati query sbagliati';
+            echo 'dati query sbagliati';//TODO MESSAGGIO DI ERRORE IN HTML
             return NULL;
         }
 
         $user = new User();
-        //$userdata = array();
 
         $user->id = $data[0][ModelDb::$mapperDb["usersTable"]["id"]];
         $user->email = $data[0][ModelDb::$mapperDb["usersTable"]["email"]];

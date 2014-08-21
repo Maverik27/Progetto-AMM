@@ -124,9 +124,6 @@ $tecnoShop = $tecnoShopManager->getTecnoShop();
 $accessManager = $tecnoShopManager->getAccessManager();
 $userManager = $tecnoShopManager->getUserManager();
 
-//echo $tecnoShop->getMsgError();
-//echo $tecnoShop->getDebugErr();
-
 $page = new Page();
 
 //imposto i parametri dei vari tag dell'Head
@@ -153,21 +150,11 @@ for ($i = 0; $i < count($startMenu); $i++) {
     }
 }
 
-
 if ($user) {
     $page->getContent()->setShowLogin(FALSE);
 } else {
     $page->getContent()->setShowLogin();
 }
-
-//$loginErr = $accessManager->getMsgError();
-//echo $loginErr;
-//
-//if ($user) {
-//    echo 'login effettuato!';
-//} else {
-//    echo 'non sei loggato!';
-//}
 
 /*
  * STEP 5
