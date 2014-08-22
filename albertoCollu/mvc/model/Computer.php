@@ -13,6 +13,7 @@
  */
 class Computer {
 
+    public $addInfo;
     private $id;
     private $type;
     private $brand;
@@ -75,6 +76,15 @@ class Computer {
 
     public function __construct() {
         $this->allDepots = array();
+        $this->addInfo = array();
+    }
+
+    public function getAddInfo($index) {
+        if (array_key_exists($index, $this->addInfo)) {
+            return $this->addInfo[$index];
+        } else {
+            return FALSE;
+        }
     }
 
     public function getAllDepots() {

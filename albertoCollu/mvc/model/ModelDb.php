@@ -14,7 +14,7 @@ class ModelDb {
     static $mapperDb = Array(
         "tables" => Array(
             "usersTable" => "users",
-            "computersTable" => "computers",
+            "computersTable" => "computer",
             "depotTable" => "depot",
         ),
         "usersTable" => Array(
@@ -41,8 +41,8 @@ class ModelDb {
             "description" => "description",
         ),
         "depotTable" => Array(
-            "id_seller" => "id_seller",
-            "id_computer" => "id_computer",
+            "uid" => "id_u",
+            "cid" => "id_c",
             "nitems" => "nitems",
             "price" => "price",
         )

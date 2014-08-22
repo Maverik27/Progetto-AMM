@@ -61,14 +61,16 @@ class Depot {
 
         //query di inserimento all'interno della tabella depot
         $query = "INSERT INTO `" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["depotTable"] . "` (`"
-                . ModelDb::$mapperDb["depotTable"]["id_seller"] . "`, `"
-                . ModelDb::$mapperDb["depotTable"]["id_computer"] . "`, `"
+                . ModelDb::$mapperDb["depotTable"]["uid"] . "`, `"
+                . ModelDb::$mapperDb["depotTable"]["cid"] . "`, `"
                 . ModelDb::$mapperDb["depotTable"]["nitems"] . "`, `"
                 . ModelDb::$mapperDb["depotTable"]["price"] . "`) VALUES ('"
                 . $depot->getSeller()->getId() . "', '"
                 . $depot->getComputer() . "', '"
                 . $depot->getNItems() . "', '"
                 . $depot->getPrice() . "');";
+
+        var_dump($query);
 
         if ($db->getRowsAfterQuery($query) == 1) {
             return TRUE;
@@ -90,9 +92,9 @@ class Depot {
         $userT = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["usersTable"] . "`";
 
         $query = "SELECT * FROM $depotT,$computerT,$userT WHERE "
-                . $depotT . ".`" . ModelDb::$mapperDb["depotTable"]["id_computer"] . "`=" . $computerT . ".`" . ModelDb::$mapperDb["computersTable"]["id"] . "` AND "
-                . $depotT . ".`" . ModelDb::$mapperDb["depotTable"]["id_seller"] . "`=" . $userT . ".`" . ModelDb::$mapperDb["usersTable"]["id"] . "` AND "
-                . $depotT . ".`" . ModelDb::$mapperDb["depotTable"]["id_seller"] . "`='" . $idSeller . "' limit $from,$to;";
+                . $depotT . ".`" . ModelDb::$mapperDb["depotTable"]["cid"] . "`=" . $computerT . ".`" . ModelDb::$mapperDb["computersTable"]["id"] . "` AND "
+                . $depotT . ".`" . ModelDb::$mapperDb["depotTable"]["uid"] . "`=" . $userT . ".`" . ModelDb::$mapperDb["usersTable"]["id"] . "` AND "
+                . $depotT . ".`" . ModelDb::$mapperDb["depotTable"]["uid"] . "`='" . $idSeller . "' limit $from,$to;";
 
         $productSeller = $db->query($query);
         $resultSellerProducts = array();
@@ -100,6 +102,7 @@ class Depot {
         if (count($productSeller) > 0) {
             for ($i = 0; $i < count($productSeller); $i++) {
                 $computer = new Computer();
+                $computer->setId($productSeller[$i][ModelDb::$mapperDb["computersTable"]["id"]]);
                 $computer->setType($productSeller[$i][ModelDb::$mapperDb["computersTable"]["type"]]);
                 $computer->setBrand($productSeller[$i][ModelDb::$mapperDb["computersTable"]["brand"]]);
                 $computer->setModel($productSeller[$i][ModelDb::$mapperDb["computersTable"]["model"]]);
@@ -112,13 +115,16 @@ class Depot {
                 $computer->setDescription($productSeller[$i][ModelDb::$mapperDb["computersTable"]["description"]]);
 
                 $depot = new Depot();
-                $depot->setSeller(new User());
-                $depot->getSeller()->setId($idSeller);
                 $depot->setNItems($productSeller[$i][ModelDb::$mapperDb["depotTable"]["nitems"]]);
                 $depot->setPrice($productSeller[$i][ModelDb::$mapperDb["depotTable"]["price"]]);
+                $depot->setSeller(new User());
+                $depot->getSeller()->setId($idSeller);
 
                 $computer->addDepotSeller($depot);
-                array_push($resultSellerProducts, $depot);
+                array_push($computer->addInfo, $depot->getNItems(), $depot->getPrice());
+                //var_dump($computer->getAddInfo());
+
+                array_push($resultSellerProducts, $computer);
             }
             return $resultSellerProducts;
         }
