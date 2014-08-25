@@ -130,7 +130,6 @@ class User {
         $data = $db->query($query);
 
         if (count($data) == 0) {
-            echo 'dati query sbagliati';//TODO MESSAGGIO DI ERRORE IN HTML
             return NULL;
         }
 

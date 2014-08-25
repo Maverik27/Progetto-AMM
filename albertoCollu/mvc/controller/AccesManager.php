@@ -104,6 +104,7 @@ class AccesManager {
             $this->updateAccessLevel($this->user->getIdentity());
         } else {
             $this->msgError = "Errore i dati inseriti sono incorretti!";
+            echo $this->msgError;
         }
     }
 

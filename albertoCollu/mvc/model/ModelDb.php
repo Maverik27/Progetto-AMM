@@ -27,7 +27,7 @@ class ModelDb {
             "identity" => "identity",
             "credit" => "credit",
         ),
-        "computersTable" => Array(
+            "computersTable" => Array(
             "id" => "id",
             "type" => "type",
             "brand" => "brand",

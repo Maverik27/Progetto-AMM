@@ -245,4 +245,39 @@ class Computer {
         }
     }
 
+    public static function getGuestView($type) {
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+
+        $type = $db->getDatabase()->escape_string($type);
+        $computerTable = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["computersTable"] . "`";
+
+        $query = "SELECT * FROM $computerTable WHERE `" . ModelDb::$mapperDb["computersTable"]["type"] . "`='" . $type . "';";
+        $productGuest = $db->query($query);
+        $resultGuestProducts = array();
+
+        if (count($productGuest)) {
+            for ($i = 0; $i < count($productGuest); $i++) {
+                $computer = new Computer();
+
+                $computer->setId($productGuest[$i][ModelDb::$mapperDb["computersTable"]["id"]]);
+                $computer->setType($productGuest[$i][ModelDb::$mapperDb["computersTable"]["type"]]);
+                $computer->setBrand($productGuest[$i][ModelDb::$mapperDb["computersTable"]["brand"]]);
+                $computer->setModel($productGuest[$i][ModelDb::$mapperDb["computersTable"]["model"]]);
+                $computer->setInces($productGuest[$i][ModelDb::$mapperDb["computersTable"]["inces"]]);
+                $computer->setOs($productGuest[$i][ModelDb::$mapperDb["computersTable"]["os"]]);
+                $computer->setCpu($productGuest[$i][ModelDb::$mapperDb["computersTable"]["cpu"]]);
+                $computer->setRam($productGuest[$i][ModelDb::$mapperDb["computersTable"]["ram"]]);
+                $computer->setStorage($productGuest[$i][ModelDb::$mapperDb["computersTable"]["storage"]]);
+                $computer->setGpu($productGuest[$i][ModelDb::$mapperDb["computersTable"]["gpu"]]);
+                $computer->setDescription($productGuest[$i][ModelDb::$mapperDb["computersTable"]["description"]]);
+
+                array_push($resultGuestProducts, $computer);
+            }
+            return $resultGuestProducts;
+        }
+    }
+
 }

@@ -221,14 +221,44 @@ inRegRic{
     float: right; 
 }
 
-.chisiamoList{
+.welcomeList{
     position: relative;
-    top:250px;
-    left: 20px;
+    list-style-type: none;
+    top:180px;
+}
+
+.welcomeLink{
+    position: relative;
+    top:230px;
     list-style-type: none;
 }
 
-.chisiamo{
+.usersInfo{
+    position: relative;
+    top: 50px;
+    left: -20px;
+    list-style-type: none;
+}
+
+.users{
+    position: relative;
+    top: 50px;
+}
+
+.asterisco{
+    position: relative;
+    top: 100px;
+}
+
+.description{
+    text-align: left;
+    position: relative;
+    top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.welcome{
     position: relative;
     top:50px;
     left: 50px;
@@ -299,7 +329,7 @@ inRegRic{
 }
 
 .weLink{
-    list-style-image: url(img/chisiamo.png);
+    list-style-image: url(img/info.png);
 }
 
 .registerLink{
@@ -421,4 +451,55 @@ inRegRic{
     //border: navy solid;
 }
 
+
+.template3{
+    //border: navy solid;
+    margin-left: 37px;
+    margin-right: 37px;
+    padding: 2px;
+    height: 250px;
+    width: 540px;
+    background-color: whitesmoke;
+    border: 1px #17769C solid;
+    border-radius: 10px;
+}
+
+.photo3{
+    position: relative;
+    left: 35px;
+    bottom: 180px;
+    //border: 1px navy solid;
+    width: 175px;
+    height: 175px;
+    border-radius: 10px;
+}
+
+.info3{
+    //border: navy solid;
+    position: relative;
+    padding: 2px;
+    left: 238px;
+    width: 300px;
+    height: 185px;
+}
+
+.price3{
+    //border: navy solid;
+    padding: 2px;
+    width: 230px;
+    height: 20px;
+    position: relative;
+    left: 2px;
+    bottom: 150px;
+    border: 1px #17769C solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bayProdGuest{
+    position: relative;
+    bottom: 210px;
+    left: -153px;
+    border-color: #17769C;
+}
 /*fine vetrina*/

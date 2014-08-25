@@ -104,8 +104,8 @@ $startMenu = Array(
         "accessLevel" => AccesManager::ACCESS_PUBLIC
     ),
     Array(
-        "title" => "Chi Siamo",
-        "link" => "index.php?page=chisiamo",
+        "title" => "Informazioni",
+        "link" => "index.php?page=informazioni",
         "class" => "weLink",
         "accessLevel" => AccesManager::ACCESS_PUBLIC
     ),
@@ -179,8 +179,8 @@ switch ($inputManager->getInput("page")) {
     case "registrati":
         include 'mvc/view/commons/registrati.php';
         break;
-    case "chisiamo":
-        include 'mvc/view/commons/chisiamo.php';
+    case "informazioni":
+        include 'mvc/view/commons/informazioni.php';
         break;
     case "profile":
         include 'mvc/view/commons/profile.php';

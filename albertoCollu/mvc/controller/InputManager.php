@@ -16,7 +16,7 @@ class InputManager {
     public $input;
     public $setPages = array(
         "registrati",
-        "chisiamo",
+        "informazioni",
         "login",
         "desktop",
         "tablet",

@@ -5,6 +5,7 @@ require_once (__DIR__) . "/../model/TecnoShop.php";
 require_once 'AccesManager.php';
 require_once 'UserManager.php';
 require_once 'DepotManager.php';
+require_once 'GuestManager.php';
 
 /**
  * Description of TecnoShopManager
@@ -20,6 +21,7 @@ class TecnoShopManager {
     private $accessManager;
     private $userManager;
     private $depotManager;
+    private $guestManager;
 
     public function __construct() {
         TecnoShopManager::$instance = $this;
@@ -31,6 +33,7 @@ class TecnoShopManager {
         $this->accessManager = new AccesManager();
         $this->userManager = new UserManager($this->accessManager->getUser());
         $this->depotManager = new DepotManager($this->accessManager->getUser());
+        $this->guestManager = new GuestManager();
         $this->manageInput();
     }
 
@@ -62,7 +65,11 @@ class TecnoShopManager {
         return $this->depotManager;
     }
 
-    /*
+    public function getGuestManager() {
+        return $this->guestManager;
+    }
+
+        /*
      * STEP 6:
      * 
      * Questo metodo è il vero e proprio metodo che progette le nostre pagine.
