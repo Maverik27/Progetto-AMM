@@ -228,6 +228,7 @@ class User {
         }
     }
 
+    //TRANSAZIONE
     public static function realUpdateCredit($idUser, $import) {
         $db = TecnoShop::getDatabase();
         if ($db == NULL) {

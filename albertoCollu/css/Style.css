@@ -235,14 +235,14 @@ inRegRic{
 
 .usersInfo{
     position: relative;
-    top: 50px;
+    top: 25px;
     left: -20px;
     list-style-type: none;
 }
 
 .users{
     position: relative;
-    top: 50px;
+    top: 25px;
 }
 
 .asterisco{
@@ -302,6 +302,12 @@ inRegRic{
     text-align: center;
     top: 50px;
     left: 120px;
+}
+
+.requisiti{
+    position: relative;
+    list-style: none;
+    text-align: left;
 }
 
 .updateCredit{
@@ -505,4 +511,5 @@ inRegRic{
     left: -150px;
     border-color: #17769C;
 }
+
 /*fine vetrina*/

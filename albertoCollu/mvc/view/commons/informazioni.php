@@ -25,10 +25,18 @@ TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
     <br/>
     <br/>
     Sono inoltre messe a disposizione delle pagine di contorno come la pagina welcome che contiene le informazioni del sito e 
-    i link alle altre pagine di contorno come la pagina per la registrazione la pagina per il login e la pagina per la ricerca.  
+    i link alle altre pagine di contorno come la pagina per la registrazione la pagina per il login e la pagina per la ricerca. 
+    <br/>
+    <br/>
+<ul class="requisiti">
+    <li>Utilizzo di HTML e CSS [SI]</li>
+    <li>Utilizzo di PHP e MySQL [SI]</li>
+    <li>Utilizzo del pattern MVC [SI]</li>
+    <li>Almeno due ruoli [Buyer e Seller]</li>
+    <li>Almeno una transazione [SI - User "realUpdateCredit"]</li>
+    <li>Almeno una funzionalità ajax [NO]</li>
+</ul> 
 </p>
-<br/>
-<br/>
 <h3 class="users">Credenziali per accedere al Sito:</h3>
 <ul class="usersInfo">
     <h5 class="users">Buyer:</h5>
@@ -47,4 +55,4 @@ TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
         <li>password: admin</li>
     </ul>
 </ul>
-    <h6 class="asterisco">* Le funzioni admin non sono state contemplate!</h6>
+<h6 class="asterisco">* Le funzioni admin non sono state contemplate!</h6>
