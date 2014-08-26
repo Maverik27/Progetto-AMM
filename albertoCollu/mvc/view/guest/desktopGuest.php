@@ -30,7 +30,8 @@ if (count($desktop)) {
                         </ul>
                     </fieldset>
                 </div>
-                <div class="photo3"><img src="css/img/code.jpg"></div>
+                
+                <div class="photo3"><img src="css/img/Desktop.png"></div>
                 <div class="price3">Prezzo non visibile per utenti Guest</div>
                 <script>
                     function guestCantBay() {

@@ -28,7 +28,19 @@ $viewSellerProducts = TecnoShopManager::getInstance()->getDepotManager()->getSel
                     </fieldset>
                 </div>
                 <div class="photo1">
-                    <img src="css/img/vetrina1.png">
+                    <?php
+                    $temp = $viewSellerProducts[$i]->getType();
+                    if ($temp == "Desktop") {
+                        ?>
+                        <img src="css/img/Desktop.png">
+                    <?php } elseif ($temp == "Notebook") {
+                        ?>
+                        <img src="css/img/pcPortatili.png">
+                    <?php } else {
+                        ?>
+                        <img src="css/img/tablet.png">
+                    <?php }
+                    ?>
                 </div>
                 <div class="price1"><?php echo $viewSellerProducts[$i]->getAddInfo(1) ?> &euro;</div>
             </div>

@@ -11,6 +11,7 @@ $notebook = TecnoShopManager::getInstance()->getGuestManager()->getGuestView($ty
 if (count($notebook)) {
     for ($i = 0; $i < count($notebook); $i++) {
         ?> 
+        <br/>
         <div class="vetrina">
             <div class="template3">
                 <div class="info3">
@@ -29,7 +30,7 @@ if (count($notebook)) {
                         </ul>
                     </fieldset>
                 </div>
-                <div class="photo3"><img src="css/img/code.jpg"></div>
+                <div class="photo3"><img src="css/img/pcPortatili.png"></div>
                 <div class="price3">Prezzo non visibile per utenti Guest</div>
                 <script>
                     function guestCantBay() {

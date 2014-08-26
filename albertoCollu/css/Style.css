@@ -365,6 +365,7 @@ inRegRic{
     width: 128px;
     height: 128px;
     border-radius: 10px;
+    border-bottom: 1px #17769C dotted;
 }
 
 .info1{
@@ -406,9 +407,10 @@ inRegRic{
     left: 20px;
     bottom: 180px;
     //border: navy solid;
-    width: 175px;
-    height: 175px;
+    width: 128px;
+    height: 128px;
     border-radius: 10px;
+    border-bottom: 1px #17769C dotted;
 }
 
 .info2{
@@ -466,12 +468,13 @@ inRegRic{
 
 .photo3{
     position: relative;
-    left: 35px;
+    left: 55px;
     bottom: 180px;
     //border: 1px navy solid;
-    width: 175px;
-    height: 175px;
+    width: 128px;
+    height: 128px;
     border-radius: 10px;
+    border-bottom: 1px #17769C dotted;
 }
 
 .info3{
@@ -490,7 +493,7 @@ inRegRic{
     height: 20px;
     position: relative;
     left: 2px;
-    bottom: 150px;
+    bottom: 130px;
     border: 1px #17769C solid;
     border-radius: 10px;
     text-align: center;
@@ -498,8 +501,8 @@ inRegRic{
 
 .bayProdGuest{
     position: relative;
-    bottom: 210px;
-    left: -153px;
+    bottom: 190px;
+    left: -150px;
     border-color: #17769C;
 }
 /*fine vetrina*/
