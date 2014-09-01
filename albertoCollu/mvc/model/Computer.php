@@ -87,10 +87,6 @@ class Computer {
         }
     }
 
-    public function getAllDepots() {
-        return $this->allDepots;
-    }
-
     public function getId() {
         return $this->id;
     }
@@ -181,6 +177,18 @@ class Computer {
 
     public function addDepotSeller($depot) {
         array_push($this->allDepots, $depot);
+    }
+
+    public function getAllDepots($index) {
+        if (array_key_exists($index, $this->allDepots)) {
+            return $this->allDepots[$index];
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function depotSize() {
+        return count($this->allDepots);
     }
 
     public static function addComputer($computer) {

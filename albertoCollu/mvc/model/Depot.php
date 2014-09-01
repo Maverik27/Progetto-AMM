@@ -130,4 +130,88 @@ class Depot {
         }
     }
 
+    public static function getSellerInfo($computerId) {
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+        $userTable = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["usersTable"] . "`";
+        $depotTable = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["depotTable"] . "`";
+
+        $computerId = $db->getDatabase()->escape_string($computerId);
+
+        $query = "SELECT * FROM $depotTable,$userTable WHERE `"
+                . ModelDb::$mapperDb["depotTable"]["cid"] . "`='$computerId' AND"
+                . $depotTable . ".`" . ModelDb::$mapperDb["depotTable"]["uid"] . "`=" . $userTable . ".`" . ModelDb::$mapperDb["usersTable"]["id"] . "` limit 1;";
+        
+        $dataSeller = $db->query($query);
+        
+        if (count($dataSeller) == 0) {
+            echo 'cacca';
+            return NULL;
+        }
+        $additionalViewInfo = array();
+        
+        for ($i = 0; $i < count($dataSeller); $i++) {
+            $user = new User();
+
+            $user->setId($dataSeller[$i][ModelDb::$mapperDb["usersTable"]["id"]]);
+            $user->setName($dataSeller[$i][ModelDb::$mapperDb["usersTable"]["name"]]);
+            $user->setSurname($dataSeller[$i][ModelDb::$mapperDb["usersTable"]["surname"]]);
+            $user->setEmail($dataSeller[$i][ModelDb::$mapperDb["usersTable"]["email"]]);
+
+            $depot = new Depot();
+
+            $depot->setComputer($computerId);
+            $depot->setSeller($user);
+            $depot->setNItems($dataSeller[$i][ModelDb::$mapperDb["depotTable"]["nitems"]]);
+            $depot->setPrice($dataSeller[$i][ModelDb::$mapperDb["depotTable"]["price"]]);
+            
+            array_push($additionalViewInfo, $depot);
+        }
+        return $additionalViewInfo;
+    }
+
+    public static function getBuyerProduct($type) {
+        $db = TecnoShop::getDatabase();
+        if ($db == NULL) {
+            return NULL;
+        }
+        $type = $db->getDatabase()->escape_string($type);
+        $computersTable = "`" . NAME_DB . "`.`" . ModelDb::$mapperDb["tables"]["computersTable"] . "`";
+
+        $query = "SELECT * FROM $computersTable WHERE `"
+                . ModelDb::$mapperDb["computersTable"]["type"] . "`='" . $type . "';";
+
+        $computerData = $db->query($query);
+
+        if (count($computerData) == 0) {
+            return NULL;
+        }
+
+        $computers = array();
+
+        for ($i = 0; $i < count($computerData); $i++) {
+            $computer = new Computer();
+            $computer->setId($computerData[$i][ModelDb::$mapperDb["computersTable"]["id"]]);
+            $computer->setType($computerData[$i][ModelDb::$mapperDb["computersTable"]["type"]]);
+            $computer->setBrand($computerData[$i][ModelDb::$mapperDb["computersTable"]["brand"]]);
+            $computer->setModel($computerData[$i][ModelDb::$mapperDb["computersTable"]["model"]]);
+            $computer->setInces($computerData[$i][ModelDb::$mapperDb["computersTable"]["inces"]]);
+            $computer->setOs($computerData[$i][ModelDb::$mapperDb["computersTable"]["os"]]);
+            $computer->setCpu($computerData[$i][ModelDb::$mapperDb["computersTable"]["cpu"]]);
+            $computer->setRam($computerData[$i][ModelDb::$mapperDb["computersTable"]["ram"]]);
+            $computer->setStorage($computerData[$i][ModelDb::$mapperDb["computersTable"]["storage"]]);
+            $computer->setGpu($computerData[$i][ModelDb::$mapperDb["computersTable"]["gpu"]]);
+            $computer->setDescription($computerData[$i][ModelDb::$mapperDb["computersTable"]["description"]]);
+
+            $info = Depot::getSellerInfo($computer->getId());
+            for ($j = 0; $j < count($info); $j++) {
+                $computer->addDepotSeller($info[$j]);
+            }
+            array_push($computers, $computer);
+        }
+        return $computers;
+    }
+
 }

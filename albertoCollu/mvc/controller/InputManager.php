@@ -30,6 +30,7 @@ class InputManager {
         "desktopGuest",
         "tabletGuest",
         "portatiliGuest",
+        "comprato",
     );
     public $setActions = array(
         "login",

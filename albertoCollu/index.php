@@ -225,6 +225,9 @@ switch ($inputManager->getInput("page")) {
         include 'mvc/view/seller/nuovoProdotto.php';
         break;
     //FINE SELLER
+    case "comprato":
+        include 'mvc/view/buyer/comprato.php';
+        break;
     default :
         include 'welcome.php';
         break;

@@ -224,12 +224,12 @@ inRegRic{
 .welcomeList{
     position: relative;
     list-style-type: none;
-    top:180px;
+    top:80px;
 }
 
 .welcomeLink{
     position: relative;
-    top:230px;
+    top:150px;
     list-style-type: none;
 }
 
@@ -443,7 +443,7 @@ inRegRic{
 
 .bayProd{
     position: relative;
-    bottom: 160px;
+    bottom: 230px;
     left: -163px;
     border-color: #17769C;
 }

@@ -1,6 +1,5 @@
 <?php
 require_once 'mvc/controller/TecnoShopManager.php';
-require_once 'mvc/view/commons/viewerMagazineProducts.php';
 TecnoShopManager::protect(AccesManager::ACCESS_GUEST);
 
 $type = "Tablet";

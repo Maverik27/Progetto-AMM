@@ -1,15 +1,14 @@
 <?php
 require_once 'mvc/controller/TecnoShopManager.php';
-require_once 'mvc/view/commons/viewerMagazineProducts.php';
 TecnoShopManager::protect(AccesManager::ACCESS_GUEST);
 
 $type = "Notebook";
-$notebook = TecnoShopManager::getInstance()->getGuestManager()->getGuestView($type);
+$tablet = TecnoShopManager::getInstance()->getGuestManager()->getGuestView($type);
 ?>
 
 <?php
-if (count($notebook)) {
-    for ($i = 0; $i < count($notebook); $i++) {
+if (count($tablet)) {
+    for ($i = 0; $i < count($tablet); $i++) {
         ?> 
         <br/>
         <div class="vetrina">
@@ -18,15 +17,15 @@ if (count($notebook)) {
                     <fieldset>
                         <legend style="text-align: left">Dati prodotto</legend>
                         <ul>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getType() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getBrand() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getModel() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getInces() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getOs() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getRam() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getCpu() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getStorage() ?></li>
-                            <li class="riepilogo"><?php echo $notebook[$i]->getGpu() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getType() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getBrand() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getModel() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getInces() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getOs() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getRam() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getCpu() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getStorage() ?></li>
+                            <li class="riepilogo"><?php echo $tablet[$i]->getGpu() ?></li>
                         </ul>
                     </fieldset>
                 </div>
