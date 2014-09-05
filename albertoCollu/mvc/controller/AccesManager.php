@@ -28,15 +28,6 @@ class AccesManager {
     // Di default il livello d'accesso è GUEST
     private static $accessLevel = AccesManager::ACCESS_GUEST;
 
-    /*
-     * In questo costruttore controlliamo se l'utente è presente in sessione. E' un controllo fatto
-     * solamente a scopo precauzionale. Abbiamo introdotto un nuovo metodo: "updateAccessLevel(...);
-     * Dall'invocazione di questo metodo si può dedurre che accetta come parametro un gruppo. Nel nostro
-     * caso sarebbe il campo "identity" della tabella "usersTable".
-     * 
-     * STEP 1: implementiamo questo metodo
-     */
-
     function __construct() {
         if (isset($_SESSION["user"])) {
             $this->user = $_SESSION["user"];
@@ -55,13 +46,6 @@ class AccesManager {
     public function isRegistered() {
         return $this->isRegistered;
     }
-    /*
-     * Molto semplicemente questo metodo a seconda dell'identità, passatagli come parametro
-     * aggiorna o ripristina (a seconda di dove utilizzato) il livello d'accesso.
-     * 
-     * STEP 2: Vediamo dove viene richiamato (escluso il costruttore).
-     *         Andiamo nel metodo "login".
-     */
 
     private function updateAccessLevel($identity) {
         switch ($identity) {
@@ -93,14 +77,6 @@ class AccesManager {
         if ($this->user) {
             $_SESSION["user"] = $this->user;
 
-            /*
-             * Quando lo user entra in sessione, quindi dopo aver fatto il login, dobbiamo aggiornargli i permessi
-             * in quanto per la nostra applicazione esso era visto come un utente GUEST, ma dopo aver compiuto il 
-             * login dobbiamo capire chi è. SELLER ? ADMIN ? BUYER? La nostra applicazione deve sapere l'identità
-             * dell'utente appena loggato.
-             * 
-             * STEP 3: Modifichiamo il metodo logout.
-             */
             $this->updateAccessLevel($this->user->getIdentity());
         } else {
             $this->msgError = "Errore i dati inseriti sono incorretti!";
@@ -121,53 +97,9 @@ class AccesManager {
         AccesManager::$accessLevel = AccesManager::ACCESS_GUEST;
     }
 
-    /*
-     * STEP 4:
-     * Per completare l'implementazione dei permessi dovremmo implementare due metodi complementari tra loro.
-     * Il primo di questi è "checkGroupAcess". Questo metodo non fa altro che effettuare l'and logico tra il 
-     * livello d'accesso dell'utente appena entrato in sessione e il permesso che la pagina deve avere. 
-     * Successivamente implementiamo il metodo "checkAccess" (che USEREMO NELLA INDEX.PHP) che ci servirà 
-     * per stabilire quali elementi della sidebar l'utente appena loggato potrà visualizzare.
-     * 
-     * DOMANDA: Si ok ho capito tutto, ma la pagina come la proteggiamo effettivamente ?
-     * RISPOSTA: Non avere fretta, questo mistero sarà svelato nello STEP 6.
-     */
-
-    /*
-     * Questo metodo effettua l'and logico tra il livello d'accesso dell'utente corrente e il livello d'accesso
-     * della pagine che noi stessi abbiamo prestabilito.
-     * 
-     * ESEMPIO:
-     * 
-     * utente --> SELLER --> $accessLevel = ACCESS_SELLER quindi $accessLevel = 4;
-     * 
-     * Vogliamo visualizzare, per esempio, la pagina "Vendi Computer" accessibile solamente agli utenti "seller"
-     * e agli utenti "admin", quindi di conseguenza questa pagine avrà come livello d'accesso ACCESS_NOBUYER,
-     * quindi il livello d'accesso sarà = 12.
-     * 
-     * Effettuiamo l'and logico:
-     * 
-     * 4   --> 0100
-     * 12  --> 1100
-     * Ris --> 0100 
-     * 
-     * Come si può notare il valore di Ris è proprio 4, ovvero il valore della costante che identifica il permesso
-     * dei "seller".
-     *
-     */
-
     public static function checkGroupAccess($accessLevel, $predeterminedAccessLevel) {
         return ($accessLevel & $predeterminedAccessLevel);
     }
-
-    /*
-     * Questo metodo come detto precedentemente, verrà utilizzato nella index come controllo per poter far
-     * visualizzare all'utente corrente determinati elementi della sidebar. Quindi se l'utente è "seller" 
-     * visualizzerà determinate cose, mentre se l'utente è "buyer" ne visualizzerà altre". Molto semplicemente
-     * questo metodo invoca il metodo "checkGroupAcess" e restituisce il risultato dell'and logico (vedi spiegazione
-     * su).
-     * s
-     */
 
     public static function checkAccess($predeterminedAccessLevel) {
         return AccesManager::checkGroupAccess(AccesManager::$accessLevel, $predeterminedAccessLevel);

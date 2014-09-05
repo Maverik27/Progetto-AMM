@@ -3,12 +3,12 @@ require_once 'mvc/controller/TecnoShopManager.php';
 TecnoShopManager::protect(AccesManager::ACCESS_GUEST);
 
 $type = "Tablet";
-$tablet = TecnoShopManager::getInstance()->getGuestManager()->getGuestView($type);
+$arrayTypeRequest = TecnoShopManager::getInstance()->getGuestManager()->getGuestView($type);
 ?>
 
 <?php
-if (count($tablet)) {
-    for ($i = 0; $i < count($tablet); $i++) {
+if (count($arrayTypeRequest)) {
+    for ($i = 0; $i < count($arrayTypeRequest); $i++) {
         ?> 
         <br/>
         <div class="vetrina">
@@ -17,15 +17,15 @@ if (count($tablet)) {
                     <fieldset>
                         <legend style="text-align: left">Dati prodotto</legend>
                         <ul>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getType() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getBrand() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getModel() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getInces() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getOs() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getRam() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getCpu() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getStorage() ?></li>
-                            <li class="riepilogo"><?php echo $tablet[$i]->getGpu() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getType() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getBrand() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getModel() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getInces() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getOs() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getRam() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getCpu() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getStorage() ?></li>
+                            <li class="riepilogo"><?php echo $arrayTypeRequest[$i]->getGpu() ?></li>
                         </ul>
                     </fieldset>
                 </div>

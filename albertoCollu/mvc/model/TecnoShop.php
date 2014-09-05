@@ -11,8 +11,7 @@ class TecnoShop {
 
     private $msgError;
     private static $database;
-    //debug 
-    private $debugErr; //da cancellare
+    private $debugErr;
 
     function __construct() {
         TecnoShop::$database = new Database(USER_DB, PASSWORD_DB, NAME_DB);

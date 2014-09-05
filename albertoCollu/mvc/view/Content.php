@@ -5,7 +5,7 @@ require_once "mvc/controller/TecnoShopManager.php";
 /**
  * Description of Content
  *
- * @author Banana Joe
+ * @author Alberto Collu
  */
 class Content {
 

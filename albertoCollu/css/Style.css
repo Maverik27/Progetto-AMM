@@ -1,7 +1,7 @@
 
 /* 
     Created on : 27-mar-2014, 18.41.27
-    Author     : bananajoe
+    Author     : Alberto Collu
 */
 
 .page{
@@ -119,13 +119,13 @@
 .logoutbutton{
     margin-left: 640px;
     position: relative;
-    bottom: 40px;
+    bottom: 43px;
 }
 
 .loginbutton{
     margin-left: 635px;
     position: relative;
-    bottom: 38px;
+    bottom: 42px;
 }
 
 .barra{
@@ -144,18 +144,6 @@
     position: relative;
     bottom: 6px;
     //border: navy solid;
-}
-
-.cerca{
-    border-radius: 1px;
-    position: relative;
-    width: 400px;
-    //border: navy solid;
-}
-
-#BarraRicerca{
-    position: relative;
-    top: 10px;
 }
 
 .registration{
@@ -233,31 +221,6 @@ inRegRic{
     list-style-type: none;
 }
 
-.usersInfo{
-    position: relative;
-    top: 25px;
-    left: -20px;
-    list-style-type: none;
-}
-
-.users{
-    position: relative;
-    top: 25px;
-}
-
-.asterisco{
-    position: relative;
-    top: 100px;
-}
-
-.description{
-    text-align: left;
-    position: relative;
-    top: 15px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
 .welcome{
     position: relative;
     top:50px;
@@ -304,10 +267,55 @@ inRegRic{
     left: 120px;
 }
 
-.requisiti{
+.unfo{
     position: relative;
-    list-style: none;
+    left: 200px;
+    width: 250px; 
+    margin-top: 50px;
+}
+
+.usersInfo{
+    list-style-type: none;
+    position: relative;
+    right: 20px;
+}
+
+.requis1{
+    list-style-image: url(img/done.png); 
     text-align: left;
+    //border: 1px navy solid;
+    width: 210px;
+    position: relative;
+    left: 25px;
+    top: 55px;
+}
+
+.requis2{
+    list-style-image: url(img/done.png); 
+    text-align: left;
+    //border: 1px navy solid;
+    width: 350px;
+    position: relative;
+    left: 300px;
+    bottom: 108px;
+}
+
+.ajax{
+    list-style-image: url(img/not.png); 
+    text-align: left;
+    //border: 1px navy solid;
+    width: 350px;
+    position: relative;
+    left: 300px;
+    bottom: 85px;
+}
+
+.description{
+    text-align: left;
+    position: relative;
+    top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .updateCredit{
@@ -342,7 +350,6 @@ inRegRic{
     list-style-image: url(img/registrati.png);
 }
 
-
 /*da qui in giù vetrina*/
 
 .vetrina{
@@ -356,7 +363,7 @@ inRegRic{
     margin-left: 37px;
     margin-right: 37px;
     padding: 2px;
-    height: 150px;
+    height: 160px;
     width: 540px;
     background-color: whitesmoke;
     border: 2px #17769C solid;
@@ -401,7 +408,7 @@ inRegRic{
     margin-left: 37px;
     margin-right: 37px;
     padding: 2px;
-    height: 275px;
+    height: 285px;
     width: 540px;
     background-color: whitesmoke;
     border: 1px #17769C solid;
@@ -410,7 +417,7 @@ inRegRic{
 
 .photo2{
     position: relative;
-    left: 20px;
+    left: 45px;
     bottom: 180px;
     //border: navy solid;
     width: 128px;
@@ -428,23 +435,42 @@ inRegRic{
     height: 185px;
 }
 
-.price2{
-    //border: navy solid;
+.sellerInfo{
+    //border: 1px navy solid;
     padding: 2px;
-    width: 100px;
+    width: 200px;
     height: 20px;
     position: relative;
-    left: 53px;
     bottom: 180px;
-    border: 1px #17769C solid;
-    border-radius: 10px;
+    left: -30px;
+    text-align: center;
+}
+
+.items{
+    //border: 1px navy solid;
+    padding: 2px;
+    width: 135px;
+    height: 20px;
+    position: relative;
+    bottom: 195px;
+    text-align: center;
+}
+
+.price2{
+    //border: 1px navy solid;
+    padding: 2px;
+    width: 70px;
+    height: 20px;
+    position: relative;
+    bottom: 117px;
+    left: -10px;
     text-align: center;
 }
 
 .bayProd{
     position: relative;
-    bottom: 230px;
-    left: -163px;
+    bottom: 180px;
+    left: -125px;
     border-color: #17769C;
 }
 
@@ -455,6 +481,7 @@ inRegRic{
     border: 1px #17769C solid;
     border-radius: 5px;
     height: 15px;
+    padding-bottom: 3px;
     text-align: center;
     //border: navy solid;
 }
@@ -465,7 +492,7 @@ inRegRic{
     margin-left: 37px;
     margin-right: 37px;
     padding: 2px;
-    height: 250px;
+    height: 280px;
     width: 540px;
     background-color: whitesmoke;
     border: 1px #17769C solid;
@@ -495,11 +522,11 @@ inRegRic{
 .price3{
     //border: navy solid;
     padding: 2px;
-    width: 230px;
-    height: 20px;
+    width: 100px;
+    height: 60px;
     position: relative;
-    left: 2px;
-    bottom: 130px;
+    left: 68px;
+    bottom: 165px;
     border: 1px #17769C solid;
     border-radius: 10px;
     text-align: center;
@@ -507,7 +534,7 @@ inRegRic{
 
 .bayProdGuest{
     position: relative;
-    bottom: 190px;
+    bottom: 150px;
     left: -150px;
     border-color: #17769C;
 }

@@ -15,9 +15,9 @@ TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
     specifiche del Buyer che del Seller. 
     <br/>
     <br/>
-    Se loggati come Buyer si ha la possibilità di ricaricare del credito, acquistare un prodotto, visualizzare per
-    tipologia i prodotti in vendita, modificare il proprio profilo utente ed effetuare una ricerca per marca e modello 
-    dei prodotti presenti nel "Magazzino".
+    Se loggati come Buyer si ha la possibilità di ricaricare del credito, acquistare un prodotto (l'acquisto non è stato 
+    implementato del tutto: "l'acquirente riceve un messaggio di avvenuto acquisto"), visualizzare per tipologia i prodotti 
+    in vendita e modificare il proprio profilo utente.
     <br/>
     <br/>
     Se loggati come Seller si ha la possibilità di aggiungere un nuovo prodotto, visualizzare la PROPRIA vetrina prodotti
@@ -25,34 +25,41 @@ TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
     <br/>
     <br/>
     Sono inoltre messe a disposizione delle pagine di contorno come la pagina welcome che contiene le informazioni del sito e 
-    i link alle altre pagine di contorno come la pagina per la registrazione la pagina per il login e la pagina per la ricerca. 
+    i link alle altre pagine di contorno come la pagina per la registrazione la pagina per il login e la pagina Contattaci. 
     <br/>
     <br/>
-<ul class="requisiti">
-    <li>Utilizzo di HTML e CSS [SI]</li>
-    <li>Utilizzo di PHP e MySQL [SI]</li>
-    <li>Utilizzo del pattern MVC [SI]</li>
+    <fieldset class="unfo">
+        <legend>Credenziali per accedere al Sito</legend>
+        <ul class="usersInfo">
+            <h5>Buyer</h5>
+            <ul class="usersInfo">
+                <li>email: buyer@gmail.com</li>
+                <li>password: buyer</li>
+            </ul>
+            <h5>Seller</h5>
+            <ul class="usersInfo">
+                <li>email: seller@gmail.com</li>
+                <li>password: seller</li>
+            </ul>
+            <h5>*Admin</h5>
+            <ul class="usersInfo">
+                <li>email: admin@gmail.com</li>
+                <li>password: admin</li>
+            </ul>
+        </ul>
+        <h6 class="asterisco">* Le funzioni admin non sono state contemplate!</h6>
+    </fieldset>
+<ul  class="requis1">
+    <li>Utilizzo di HTML e CSS</li>
+    <li>Utilizzo di PHP e MySQL</li>
+    <li>Utilizzo del pattern MVC</li>
     <li>Almeno due ruoli [Buyer e Seller]</li>
-    <li>Almeno una transazione [SI - User "realUpdateCredit"]</li>
-    <li>Almeno una funzionalità ajax [NO]</li>
-</ul> 
-</p>
-<h3 class="users">Credenziali per accedere al Sito:</h3>
-<ul class="usersInfo">
-    <h5 class="users">Buyer:</h5>
-    <ul class="usersInfo">
-        <li>email: buyer@gmail.com</li>
-        <li>password: buyer</li>
-    </ul>
-    <h5 class="users">Seller:</h5>
-    <ul class="usersInfo">
-        <li>email: seller@gmail.com</li>
-        <li>password: seller</li>
-    </ul>
-    <h5 class="users">*Admin:</h5>
-    <ul class="usersInfo">
-        <li>email: admin@gmail.com</li>
-        <li>password: admin</li>
-    </ul>
 </ul>
-<h6 class="asterisco">* Le funzioni admin non sono state contemplate!</h6>
+<ul  class="requis2"> 
+    <li>Almeno una transazione [User "realUpdateCredit"]</li>
+    <li>Almeno una funzionalità javascript [GuestButton]</li>
+</ul>
+<ul  class="ajax">
+    <li>Almeno una funzionalità ajax</li> 
+</ul>
+</p>

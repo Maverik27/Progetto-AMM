@@ -3,7 +3,7 @@
 /**
  * Description of Header
  *
- * @author Banana Joe
+ * @author Alberto Collu
  */
 class Header {
 

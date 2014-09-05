@@ -23,7 +23,7 @@ $viewSellerProducts = TecnoShopManager::getInstance()->getDepotManager()->getSel
                             <li class="riepilogo"><?php echo $viewSellerProducts[$i]->getType() ?></li>
                             <li class="riepilogo"><?php echo $viewSellerProducts[$i]->getBrand() ?></li>
                             <li class="riepilogo"><?php echo $viewSellerProducts[$i]->getModel() ?></li>
-                            <li class="riepilogo"><?php echo $viewSellerProducts[$i]->getAddInfo(0) ?></li>
+                            <li class="riepilogo"># <?php echo $viewSellerProducts[$i]->getAddInfo(0) ?></li>
                         </ul>
                     </fieldset>
                 </div>

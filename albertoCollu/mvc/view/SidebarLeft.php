@@ -7,7 +7,7 @@ require_once 'StartMenu.php';
 /**
  * Description of SidebarLeft
  *
- * @author Banana Joe
+ * @author Alberto Collu
  */
 class SidebarLeft {
 

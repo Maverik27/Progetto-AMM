@@ -44,6 +44,5 @@ TecnoShopManager::protect(AccesManager::ACCESS_PUBLIC);
     <li>Per effettuare il login: Consultate la pagina <a href="index.php?page=login">Login</a></li>
     <li>Per la registrazione: Consultate la pagina <a href="index.php?page=registrati">Registrati</a></li>
     <li>Per informazioni: Consultate la pagina <a href="index.php?page=informazioni">Informazioni</a></li>
-    <li>Per la ricerca nel sito: Consultate la pagina <a href="index.php?page=cerca">Cerca</a></li>
 </ul>
 </div>

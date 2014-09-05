@@ -3,7 +3,7 @@
 /**
  * Description of Footer
  *
- * @author Banana Joe
+ * @author Alberto Collu
  */
 class Footer {
 
