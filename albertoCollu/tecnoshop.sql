@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generato il: Ago 22, 2014 alle 16:32
--- Versione del server: 5.5.38-0ubuntu0.14.04.1
--- Versione PHP: 5.5.9-1ubuntu4.3
+-- Host: 127.0.0.1
+-- Generation Time: Set 05, 2014 alle 20:37
+-- Versione del server: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `computer` (
   `gpu` enum('nVidia GeForce GTX 770','nVidia GeForce GTX 760','AMD Gigabyte Radeon R9 270X','AMD Sapphire R7 240') COLLATE latin1_general_cs NOT NULL,
   `description` text COLLATE latin1_general_cs,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=27 ;
 
 --
 -- Dump dei dati per la tabella `computer`
@@ -50,7 +50,13 @@ CREATE TABLE IF NOT EXISTS `computer` (
 INSERT INTO `computer` (`id`, `type`, `brand`, `model`, `inces`, `ram`, `os`, `cpu`, `storage`, `gpu`, `description`) VALUES
 (14, 'Desktop', 'Dell', 'XPS', '10.1', 'DDR3 16GB 1600MHz', 'Windows 8.1 x64', 'i7-4980HQ', '320GB 5400RPM SATA2', 'AMD Gigabyte Radeon R9 270X', 'Descrizione prodotto..'),
 (17, 'Tablet', 'Samsung', 'Note 10.1', '10.1', 'DDR3 8GB 1600MHz', 'Windows 8.1 x64', 'FX-8350', '750GB 9600RPM SATA3', 'AMD Gigabyte Radeon R9 270X', 'Tablet'),
-(18, 'Notebook', 'HP', 'Pavillon', '17.2', 'DDR3 4GB 1600MHz', 'Windows 8.1 x64', 'i5-4910MQ', '750GB 9600RPM SATA3', 'AMD Sapphire R7 240', 'Descrizione prodotto..');
+(18, 'Notebook', 'HP', 'Pavillon', '17.2', 'DDR3 4GB 1600MHz', 'Windows 8.1 x64', 'i5-4910MQ', '750GB 9600RPM SATA3', 'AMD Sapphire R7 240', 'Descrizione prodotto..'),
+(20, 'Desktop', 'Asus', 'X-501A', '10.1', 'DDR1 1GB 400MHz', 'Linux mint 17 x86', 'i7-4980HQ', '250GB 7200RPM SATA3', 'nVidia GeForce GTX 770', 'Descrizione prodotto..'),
+(21, 'Tablet', 'Sony', 'Xperia z2 ', '10.1', 'DDR2 2GB 800MHz', 'Linux mint 17 x64', 'i7-4980HQ', '180GB SSD SATA3', 'nVidia GeForce GTX 770', 'Descrizione prodotto..'),
+(22, 'Desktop', 'Apple', 'MacBook Pro', '13.3', 'DDR3 4GB 1600MHz', 'Linux mint 17 x86', 'i7-4980HQ', '128GB SSD SATA3', 'nVidia GeForce GTX 770', 'Descrizione prodotto..'),
+(24, 'Tablet', 'Acer', 'iconia', '10.1', 'DDR1 1GB 400MHz', 'Linux mint 17 x86', 'i7-4980HQ', '250GB 7200RPM SATA3', 'nVidia GeForce GTX 770', 'Descrizione prodotto..'),
+(25, 'Notebook', 'SONY', 'Vaio', '15.6', 'DDR3 4GB 1600MHz', 'Windows 7 x64', 'i3-4690TG', '500GB 7200RPM SATA2', 'nVidia GeForce GTX 760', 'Descrizione prodotto..'),
+(26, 'Tablet', 'COMPAQ', 'vr500lx', '14.2', 'DDR3 4GB 1600MHz', 'Windows 7 x64', 'i3-4690TG', '500GB 7200RPM SATA2', 'AMD Gigabyte Radeon R9 270X', 'Descrizione prodotto..');
 
 -- --------------------------------------------------------
 
@@ -74,7 +80,13 @@ CREATE TABLE IF NOT EXISTS `depot` (
 INSERT INTO `depot` (`id_u`, `id_c`, `nitems`, `price`) VALUES
 (1, 14, 25, 15.32),
 (1, 17, 5, 899.99),
-(1, 18, 20, 599.99);
+(1, 18, 20, 599.99),
+(1, 20, 1, 20.12),
+(1, 21, 10, 359.9),
+(4, 22, 3, 1100.99),
+(4, 24, 12, 299),
+(4, 25, 3, 459.99),
+(4, 26, 6, 349.99);
 
 -- --------------------------------------------------------
 
@@ -99,10 +111,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`, `surname`, `address`, `identity`, `credit`) VALUES
-(1, 'seller@gmail.com', '2e7464a5e9bac192f1251866fea0c255db0cbd83', 'Claudio', 'Bisio', 'Via Zelig 13', 'seller', NULL),
-(2, 'buyer@gmail.com', '9b165e49da3c5629a2dce8f7d7abbdd7025973d5', 'Leonardo', 'Pieraccioni', 'Via Panettone 34', 'buyer', 200),
-(3, 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Tony', 'Stark', 'Stark Industries', 'admin', NULL),
-(4, 'seller1@gmail.com', 'c46d1098df4be876c60e070b66c52b598867bc29', 'Luis Nazario ', 'De Lima', 'Via dalle Palle', 'seller', 0);
+(1, 'seller@gmail.com', '2e7464a5e9bac192f1251866fea0c255db0cbd83', 'Giulio', 'Cesare', 'Via Roma 13', 'seller', NULL),
+(2, 'buyer@gmail.com', '9b165e49da3c5629a2dce8f7d7abbdd7025973d5', 'Ottaviano', 'Augusto', 'Via Milano 94', 'buyer', 250),
+(3, 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Tito', 'Vespasiano', 'Via Ponzio 57', 'admin', 0),
+(4, 'seller2@gmail.com', 'e1aebd011e46c2cc90643cf88b2f59645722957e', 'Domiziano', 'Flavio', 'Via Ciampino 12', 'seller', 0);
 
 --
 -- Limiti per le tabelle scaricate

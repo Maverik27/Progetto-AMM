@@ -70,8 +70,6 @@ class Depot {
                 . $depot->getNItems() . "', '"
                 . $depot->getPrice() . "');";
 
-        var_dump($query);
-
         if ($db->getRowsAfterQuery($query) == 1) {
             return TRUE;
         } else {
