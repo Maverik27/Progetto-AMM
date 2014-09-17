@@ -59,7 +59,7 @@ $total = TecnoShopManager::getInstance()->getAccessManager()->getUser()->getCred
 if ($credit) {
     echo "<div class=\"updateCredit\">"
     . "<li class=\"titleRic\"><a class=\"linkAdd\" style=\"text-decoration: none\">Importo di " . $credit . " &euro; ricaricato correttamente! Torna alla "
-    . "<a class=\"linkAdd\" href=\"http://localhost/Prove-SitoWeb/albertoCollu/index.php?page=welcome\">HomePage!</a></a></li>"
+    . "<a class=\"linkAdd\" href=\"http://spano.sc.unica.it/colluAlberto/progetto/index.php?page=welcome\">HomePage!</a></a></li>"
     . "</div>";
 }
 ?>

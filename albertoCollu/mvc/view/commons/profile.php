@@ -51,7 +51,7 @@ if (!$isChange) {
 } else {
     echo "<div class=\"changeData\">"
     . "<li class=\"titleProfile\"><a class=\"linkAdd\" style=\"text-decoration: none\">Modifiche avvenute con successo! Torna alla "
-    . "<a class=\"linkAdd\" href=\"http://localhost/Prove-SitoWeb/albertoCollu/index.php?page=welcome\">HomePage!</a></a></li>"
+    . "<a class=\"linkAdd\" href=\"http://spano.sc.unica.it/colluAlberto/progetto/index.php?page=welcome\">HomePage!</a></a></li>"
     . "</div>"
     . "<img class=\"ingran\" src=\"css/img/ingra1.gif\">";
 }

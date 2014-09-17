@@ -4,7 +4,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
 
 echo "<div class=\"changeData\">"
  . "<li class=\"titleProfile\"><a class=\"linkAdd\" style=\"text-decoration: none\">Prodotto Inserito Correttamente! Torna alla "
- . "<a class=\"linkAdd\" href=\"http://localhost/Prove-SitoWeb/albertoCollu/index.php?page=welcome\">HomePage!</a></a></li>"
+ . "<a class=\"linkAdd\" href=\"http://spano.sc.unica.it/colluAlberto/progetto/index.php?page=welcome\">HomePage!</a></a></li>"
  . "</div>";
 ?>
 

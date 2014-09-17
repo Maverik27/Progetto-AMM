@@ -73,7 +73,7 @@ if (!$isRegistered) {
 } else {
     echo "<div class=\"changeData\">"
     . "<li class=\"titleProfile\"><a class=\"linkAdd\" style=\"text-decoration: none\">Grazie per esserti registrato! Torna alla "
-    . "<a class=\"linkAdd\" href=\"http://localhost/Prove-SitoWeb/albertoCollu/index.php?page=welcome\">HomePage!</a></a></li>"
+    . "<a class=\"linkAdd\" href=\"http://spano.sc.unica.it/colluAlberto/progetto/index.php?page=welcome\">HomePage!</a></a></li>"
     . "</div>"
     . "<img class=\"mano\" src=\"css/img/mano.gif\">";
 }?>

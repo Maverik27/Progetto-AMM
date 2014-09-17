@@ -54,5 +54,5 @@ TecnoShopManager::protect(AccesManager::ACCESS_GUEST);
 </div>
 <div class="volFirstVisit">
     <font face="Comic Sans ms"><i><h3>Prima volta su TecnoShop? Inizia Ora!</h3></i></font>
-    <a href="http://localhost/Prove-SitoWeb/albertoCollu/index.php?page=registrati"><img src="css/img/regImg.png"></a>
+    <a href="http://spano.sc.unica.it/colluAlberto/progetto/index.php?page=registrati"><img src="css/img/regImg.png"></a>
 </div>

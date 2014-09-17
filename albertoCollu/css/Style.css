@@ -17,9 +17,14 @@
     border-radius: 3px;
     text-align: center;
     padding-bottom: 25px;
-    background-color: #17769C;
     height: 80px;
-    //border: navy solid;
+    //border: 1px navy solid;
+}
+
+.ts{
+    //border: 1px navy solid;
+    position: relative;
+    bottom: 105px;
 }
 
 #sidebar{
@@ -327,7 +332,7 @@ inRegRic{
     position: relative;
     width: 350px;
     left: 330px;
-    top: 70px;
+    top: 110px;
 }
 
 .welcome{
