@@ -10,7 +10,7 @@ class Footer {
     private $info;
 
     function __construct() {
-        $this->info = "<div class=\"info\"><p>\tCopyright &copy; 2014 - Tecno Shop. Tutti i Diritti riservati. "
+        $this->info = "<div class=\"info\"><p>\tCopyright &copy; 2014 - TecnoShop. Tutti i Diritti riservati. "
                 . "Webdesign <a href=\"mailto:albe.collu@gmail.com\"> Alberto Collu</a></p></div>\n";
     }
 

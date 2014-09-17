@@ -30,6 +30,7 @@ class Head {
 
     public function __toString() {
         $html = "<head>";
+        $html.= "<link rel=\"shortcut icon\" href=\"http://spano.sc.unica.it/colluAlberto/progetto/ts.ico\">";
         $html.= "<title>" . $this->title . "</title>";
         for ($i = 0; $i < count($this->meta); $i++) {
             $html.= $this->meta[$i];
@@ -41,3 +42,4 @@ class Head {
         return $html;
     }
 }
+                                                                                                                               

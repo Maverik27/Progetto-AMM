@@ -185,6 +185,9 @@ switch ($inputManager->getInput("page")) {
     case "comprato":
         include 'mvc/view/buyer/comprato.php';
         break;
+    case "aggiunto":
+        include 'mvc/view/seller/aggiunto.php';
+        break;
     default :
         include 'welcome.php';
         break;

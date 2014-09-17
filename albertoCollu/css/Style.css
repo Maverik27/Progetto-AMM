@@ -1,4 +1,3 @@
-
 /* 
     Created on : 27-mar-2014, 18.41.27
     Author     : Alberto Collu
@@ -111,9 +110,15 @@
     //border: navy solid;
 }
 
-.logIn{
+.textLog{
     position: relative;
-    top: 10px;
+    right: 6px;
+    bottom: 150px;
+}
+
+.textLog2{
+    position: relative;
+    bottom: 150px;
 }
 
 .logoutbutton{
@@ -126,6 +131,59 @@
     margin-left: 635px;
     position: relative;
     bottom: 42px;
+}
+
+.logImg{
+    position: relative;
+    left: -50px;
+    top: 20px;
+}
+
+.freccia{
+    position: relative;
+    //border: 1px navy solid;
+    top: 33px;
+    left: 50px;
+}
+
+.logIn{
+    position: relative;
+    //border: 1px navy solid;
+    text-align: right;
+    left: 150px;  
+    top: -20px;
+    width: 200px;
+    height: 150px;
+}
+
+.titleLog{
+    position: relative;
+    top: 35px;
+}
+
+.generali{
+    position: relative;
+    top: 40px;
+}
+
+.condizioni{
+    position: relative;
+    //border: 1px navy solid;
+    top:60px;
+}
+
+.condizioni2{
+    position: relative;
+    //border: 1px navy solid;
+    top:80px;
+}
+
+.volFirstVisit{ 
+    position: relative;
+    top: 130px;
+    right: 20px;
+    text-align: right;
+    //border: 1px navy solid;
 }
 
 .barra{
@@ -149,28 +207,77 @@
 .registration{
     //border: navy solid;
     position: relative;
-    top: 50px;
+    bottom: 575px;
     text-align: left;
     display: inline-block;
     width: 400px;
+}
+
+.profileImg2{
+    //border: 1px navy solid;
+    position: relative;
+    top: 20px;
+    height: 700px;
+}
+
+.profilePen2{
+    //border: 1px navy solid;
+    position: relative;
+    bottom: 115px;
+    height: 50px;
 }
 
 .changeProfile{
     //border: navy solid;
     position: relative;
-    top: 50px;
+    bottom: 500px;
     text-align: left;
     display: inline-block;
     width: 400px;
 }
 
-.credit{
-    //border: navy solid;
+.ingran{
     position: relative;
-    top: 50px;
+    top: 100px;
+}
+
+.mano{
+    position: relative;
+    top: 100px;
+}
+
+.profileImg{
+    //border: 1px navy solid;
+    position: relative;
+    top: 20px;
+    height: 650px;
+}
+
+.profilePen{
+    //border: 1px navy solid;
+    position: relative;
+    bottom: 100px;
+    height: 50px;
+}
+
+.credit{
+    //border: 1px navy solid;
+    position: relative;
+    left: 220px;
     text-align: left;
-    display: inline-block;
     width: 256px;
+}
+
+.card{
+    position: relative;
+    //border: 1px navy solid;
+    top: 170px;
+}
+
+.titleRic{
+    //border: navy solid;
+    text-align: center;
+    bottom: 50px;
 }
 
 .titleReg{
@@ -212,20 +319,57 @@ inRegRic{
 .welcomeList{
     position: relative;
     list-style-type: none;
-    top:80px;
+    top:50px;
 }
 
-.welcomeLink{
+.infoContact{
+    //border: 1px navy solid;
     position: relative;
-    top:150px;
-    list-style-type: none;
+    width: 350px;
+    left: 330px;
+    top: 70px;
 }
 
 .welcome{
+    //border: 1px navy solid;
     position: relative;
-    top:50px;
-    left: 50px;
     text-align: left;
+    height: 880px;
+}
+
+.TecnoShop{
+    position: relative;
+    bottom: 220px;
+    left: 500px;
+}
+
+.benvenuto{
+    position: relative;
+    top: 35px;
+}
+
+.comprato{
+    position: relative;
+    //border: 1px navy solid;
+    top:100px;
+}
+
+.comprato2{
+    position: relative;
+    //border: 1px navy solid;
+    top:140px;
+}
+
+.comprato3{
+    position: relative;
+    //border: 1px navy solid;
+    top:180px;
+}
+
+.left{
+    position: relative;
+    padding-right: 20px;
+    left: -20px;
 }
 
 .mail{
@@ -323,10 +467,27 @@ inRegRic{
     background-color: whitesmoke;
     border: 2px #17769C solid;
     border-radius: 10px;
-    width: 350px;
+    width: 450px;
     text-align: center;
-    top: 200px;
-    left: 160px;
+    bottom: 573px;
+    height: 50px;
+    left: 120px;
+}
+
+.money{
+    position: relative;
+    bottom: 520px;
+}
+
+.titleRic{
+    list-style-image: url(img/conf.png);
+    position: relative;
+    top: 6px;
+}
+
+.ricorda{
+    position: relative;
+    top: 100px;
 }
 
 .linkAdd{
@@ -343,7 +504,7 @@ inRegRic{
 }
 
 .weLink{
-    list-style-image: url(img/info.png);
+    list-style-image: url(img/info.gif);
 }
 
 .registerLink{

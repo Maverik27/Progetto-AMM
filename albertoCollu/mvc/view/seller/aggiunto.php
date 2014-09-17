@@ -1,9 +1,9 @@
 <?php
 require_once 'mvc/controller/TecnoShopManager.php';
-TecnoShopManager::protect(AccesManager::ACCESS_NOSELLER);
+TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
 
 echo "<div class=\"changeData\">"
- . "<li class=\"titleProfile\"><a class=\"linkAdd\" style=\"text-decoration: none\">Prodotto Acquistato Correttamente! Torna alla "
+ . "<li class=\"titleProfile\"><a class=\"linkAdd\" style=\"text-decoration: none\">Prodotto Inserito Correttamente! Torna alla "
  . "<a class=\"linkAdd\" href=\"http://localhost/Prove-SitoWeb/albertoCollu/index.php?page=welcome\">HomePage!</a></a></li>"
  . "</div>";
 ?>

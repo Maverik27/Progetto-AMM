@@ -7,7 +7,7 @@ TecnoShopManager::protect(AccesManager::ACCESS_NOBUYER);
 <div class="titleReg"><h1>Aggiungi un nuovo prodotto!</h1></div>
 
 <div class="addNew">
-    <form class="" action="index.php?page=nuovoProdotto&action=addNew" method="post">
+    <form class="" action="index.php?page=aggiunto" method="post">
         <fieldset><legend>Scheda Prodotto</legend>
             <br/>
             <div>
